@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://cabourotte.mcorbin.fr/api/healthcheck/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cabourotte.mcorbin.fr/community/how-to-contribute/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cabourotte.mcorbin.fr/installation/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cabourotte.mcorbin.fr/api/result/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cabourotte.mcorbin.fr/api/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cabourotte.mcorbin.fr/exporters/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cabourotte.mcorbin.fr/community/support/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cabourotte.mcorbin.fr/installation/get-cabourotte/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cabourotte.mcorbin.fr/exporters/http/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cabourotte.mcorbin.fr/installation/configuration/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cabourotte.mcorbin.fr/installation/launch-it/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cabourotte.mcorbin.fr/installation/monitoring/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cabourotte.mcorbin.fr/community/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cabourotte.mcorbin.fr/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://cabourotte.mcorbin.fr/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://cabourotte.mcorbin.fr/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+</urlset>
