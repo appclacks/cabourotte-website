@@ -1,6 +1,6 @@
 # Cabourotte, a monitoring tool to execute healthchecks on your infrastructure
 
-IT infrastructures have before more complex. We have more and more equipments, machines, and services to manage. Infrastructures are also more dynamic, with services which can be scaled up and down depending on usage.
+IT infrastructures are complex. We have more and more equipments, machines, and services to manage. Infrastructures are also more dynamic, with services which can be scaled up and down depending on usage.
 
 The rise of containers orchestrators also made networking more complex. On a network failure, a service could be reachable from one part of your infrastructure but not from another one.
 
