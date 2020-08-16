@@ -8,7 +8,7 @@ disableToc: false
 
 Cabourotte provides several endpoints to create various kind of healthchecks. The payload is formatted as json, and should be a valid healthcheck definition.
 
-The availables options for healthchecks are exactly the same than the one described in the [configuration](/installation/configuration/) section.
+The availables options for healthchecks are exactly the same than the one described in the [configuration](/installation/configuration/) section. Some parameters should be written in `camel-case` (for example, `source_ip` in the yaml will be `source-ip` in the API).
 
 If the parameter `one-off` is set to `true` in the payload, the healthcheck will be instantly executed and the result will be returned in the HTTP response (an example is available on this page). In that case, the healthcheck will **not** be periodically executed.
 
@@ -45,6 +45,18 @@ curl -H "Content-Type: application/json" 127.0.0.1:9013/healthcheck/tcp -d '{"na
 
 ```
 curl -H "Content-Type: application/json" 127.0.0.1:9013/healthcheck/dns -d '{"name":"mcorbin-dns-check","description":"dns healthcheck example","domain":"mcorbin.fr","interval":"5s"}'
+
+{"message":"Healthcheck successfully added"}
+```
+
+### Create a TLS Healthcheck
+
+- **POST** /healthcheck/tls
+
+---
+
+```
+curl -H "Content-Type: application/json" 127.0.0.1:9013/healthcheck/tls -d '{"name":"mcorbin-tls-check","description":"tls healthcheck example","target":"mcorbin.fr","interval":"5s","timeout": "3s","port":443, "expiration-delay": "48h"}'
 
 {"message":"Healthcheck successfully added"}
 ```
