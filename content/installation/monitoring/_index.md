@@ -6,7 +6,7 @@ disableToc: false
 
 ## Metrics
 
-Cabourotte exposes various metrics about itself and about healthchecks on the `/metrics` endpoint.
+Cabourotte exposes various metrics about itself and about healthchecks on the `/metrics` endpoint using the Prometheus format.
 
 Here are some interesting metrics exposed:
 
