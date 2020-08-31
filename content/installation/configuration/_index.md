@@ -39,6 +39,10 @@ dns_checks:
     domain: "mcorbin.fr"
     # The healthcheck interval
     interval: 5s
+    # Labels for this healthcheck. It will be used in logging and in
+    # exporters (optional)
+    labels:
+      environment: prod
 # The http_checks section can be used to configure HTTP healthchecks
 http_checks:
     # The healthcheck name
@@ -79,6 +83,10 @@ http_checks:
     key: "/tmp/foo.key"
     # The source IP which will be used for healthchecks (optional)
     source_ip: "10.1.1.2"
+    # Labels for this healthcheck. It will be used in logging and in
+    # exporters (optional)
+    labels:
+      environment: prod
 # The tcp_checks section can be used to configure HTTP healthchecks
 tcp_checks:
     # The healthcheck name
@@ -98,6 +106,10 @@ tcp_checks:
     # If set to true, the healthcheck will be considered successful it the TCP
     # connection fails (optional, default to false)
     should_fail: true
+    # Labels for this healthcheck. It will be used in logging and in
+    # exporters (optional)
+    labels:
+      environment: prod
 # the tls_checks section can be used to configure TLS healthchecks
 tls_checks:
     # The healthcheck name
@@ -128,6 +140,10 @@ tls_checks:
     cert: "/tmp/cert.pem"
     # A key for mTLS (optional)
     key: "/tmp/foo.key"
+    # Labels for this healthcheck. It will be used in logging and in
+    # exporters (optional)
+    labels:
+      environment: prod
 # The exporters section can be used to configure exporters.
 exporters:
   # a list of HTTP exporters

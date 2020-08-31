@@ -18,22 +18,19 @@ Here is an example payload sent by the HTTP exporter for a successful DNS health
 [
   {
     "name": "mcorbin-dns-check",
-    "configuration": {
-      "name": "mcorbin-dns-check",
-      "description": "dns healthcheck example",
-      "domain": "mcorbin.fr",
-      "interval": "5s",
-      "one-off": false
+    "summary": "dns healthcheck example on mcorbin.fr",
+    "labels": {
+      "environment": "prod"
     },
     "success": true,
-    "timestamp": "2020-07-08T21:40:36.696940038+02:00",
+    "timestamp": "2020-08-31T22:16:00.925315875+02:00",
     "message": "success"
   }
 ]
 ```
 
 - `name` is the healthcheck name.
-- `configuration` is the configuration of the healthcheck executed.
+- `summary` is a small string with some information about the healthcheck.
 - `success` indicates if the healthcheck was successful or not.
 - `timestamp` is when the healthcheck was executed.
 - `message` is a message containing `success` in case of a successful healthcheck, or an error message in case of a failure.
