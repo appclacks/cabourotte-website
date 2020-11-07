@@ -8,7 +8,7 @@ disableToc: false
 
 Cabourotte provides several endpoints to create various kind of healthchecks. The payload is formatted as json, and should be a valid healthcheck definition.
 
-The availables options for healthchecks are exactly the same than the one described in the [configuration](/installation/configuration/) section. Some parameters should be written in `camel-case` (for example, `source_ip` in the yaml will be `source-ip` in the API).
+The availables options for healthchecks are exactly the same than the one described in the [configuration](/installation/configuration/) section.
 
 If the parameter `one-off` is set to `true` in the payload, the healthcheck will be instantly executed and the result will be returned in the HTTP response (an example is available on this page). In that case, the healthcheck will **not** be periodically executed.
 

@@ -12,21 +12,21 @@
     <title>Configuration :: Cabourotte verifies if your infrastructure is healthy</title>
 
     
-    <link href="/css/nucleus.css?1598905846" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1598905846" rel="stylesheet">
-    <link href="/css/hybrid.css?1598905846" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1598905846" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1598905846" rel="stylesheet">
-    <link href="/css/auto-complete.css?1598905846" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1598905846" rel="stylesheet">
-    <link href="/css/theme.css?1598905846" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1598905846" rel="stylesheet">
+    <link href="/css/nucleus.css?1604754605" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1604754605" rel="stylesheet">
+    <link href="/css/hybrid.css?1604754605" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1604754605" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1604754605" rel="stylesheet">
+    <link href="/css/auto-complete.css?1604754605" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1604754605" rel="stylesheet">
+    <link href="/css/theme.css?1604754605" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1604754605" rel="stylesheet">
     
-    <link href="/css/theme-blue.css?1598905846" rel="stylesheet">
+    <link href="/css/theme-blue.css?1604754605" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1598905846"></script>
+    <script src="/js/jquery-3.3.1.min.js?1604754605"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -59,14 +59,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1598905846"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1598905846"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1604754605"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1604754605"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/cabourotte.mcorbin.fr";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1598905846"></script>
+<script type="text/javascript" src="/js/search.js?1604754605"></script>
 
     
   </div>
@@ -585,10 +585,10 @@ http:
   # A list of IPs (v4 or v6) which will be compared to the
   # DNS lookup results. The healthcheck will fail if the IPs defined
   # in this list are not returned
-  expected_ips:
+  expected-ips:
     - 165.1.3.4
 # The dns_checks section can be used to configure DNS healthchecks
-dns_checks:
+dns-checks:
     # The healthcheck name
   - name: &quot;mcorbin-dns-check&quot;
     # The healthcheck description
@@ -602,13 +602,13 @@ dns_checks:
     labels:
       environment: prod
 # The http_checks section can be used to configure HTTP healthchecks
-http_checks:
+http-checks:
     # The healthcheck name
   - name: &quot;mcorbin-http-check&quot;
     # The healthcheck description
     description: &quot;http healthcheck example&quot;
     # The list of HTTP status codes to consider the healthcheck successful
-    valid_status:
+    valid-status:
       - 200
       - 201
     # The healthcheck target. It can be an IP (v4 or v6) or a domain
@@ -631,7 +631,7 @@ http_checks:
     # Body to pass to the request (optional)
       body: &quot;my request body&quot;
     # A list of regular expression. The response body should match them (optional)
-    body_regexp
+    body-regexp:
       - &quot;foo!&quot;
     # A cacert for mTLS (optional)
     cacert: &quot;/tmp/cacert.pem&quot;
@@ -640,13 +640,13 @@ http_checks:
     # A key for mTLS (optional)
     key: &quot;/tmp/foo.key&quot;
     # The source IP which will be used for healthchecks (optional)
-    source_ip: &quot;10.1.1.2&quot;
+    source-ip: &quot;10.1.1.2&quot;
     # Labels for this healthcheck. It will be used in logging and in
     # exporters (optional)
     labels:
       environment: prod
 # The tcp_checks section can be used to configure HTTP healthchecks
-tcp_checks:
+tcp-checks:
     # The healthcheck name
   - name: &quot;mcorbin-tcp-check&quot;
     # The healthcheck description
@@ -660,16 +660,16 @@ tcp_checks:
     # The healthcheck interval
     interval: 10s
     # The source IP which will be used for healthchecks (optional)
-    source_ip: &quot;10.1.1.2&quot;
+    source-ip: &quot;10.1.1.2&quot;
     # If set to true, the healthcheck will be considered successful it the TCP
     # connection fails (optional, default to false)
-    should_fail: true
+    should-fail: true
     # Labels for this healthcheck. It will be used in logging and in
     # exporters (optional)
     labels:
       environment: prod
 # the tls_checks section can be used to configure TLS healthchecks
-tls_checks:
+tls-checks:
     # The healthcheck name
   - name: &quot;mcorbin-tls-check&quot;
     # The healthcheck description
@@ -683,15 +683,15 @@ tls_checks:
     # The healthcheck interval
     interval: 10s
     # The source IP which will be used for healthchecks (optional)
-    source_ip: &quot;10.1.1.2&quot;
-    # The SNI which will be used by the healthcheck (optional, default to the target value).
-    server_name: example.com
+    source-ip: &quot;10.1.1.2&quot;
+    # The SNI which will be used by the healthcheck (optional, default to the target value)
+    server-name: example.com
     # Enable or disable insecure TLS connections (default to false)
     insecure: false
     # Verifies if the certificate expires in this delay (optional). The healthcheck will
     # fail if the certificat expires soon.
     # The format is the duration format of Golang: https://golang.org/pkg/time/#ParseDuration
-    expiration_delay: 240h
+    expiration-delay: 240h
     # A cacert for mTLS (optional)
     cacert: &quot;/tmp/cacert.pem&quot;
     # A cert for mTLS (optional)
@@ -1006,19 +1006,19 @@ exporters:
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1598905846"></script>
-    <script src="/js/perfect-scrollbar.min.js?1598905846"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1598905846"></script>
-    <script src="/js/jquery.sticky.js?1598905846"></script>
-    <script src="/js/featherlight.min.js?1598905846"></script>
-    <script src="/js/highlight.pack.js?1598905846"></script>
+    <script src="/js/clipboard.min.js?1604754605"></script>
+    <script src="/js/perfect-scrollbar.min.js?1604754605"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1604754605"></script>
+    <script src="/js/jquery.sticky.js?1604754605"></script>
+    <script src="/js/featherlight.min.js?1604754605"></script>
+    <script src="/js/highlight.pack.js?1604754605"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1598905846"></script>
-    <script src="/js/learn.js?1598905846"></script>
-    <script src="/js/hugo-learn.js?1598905846"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1604754605"></script>
+    <script src="/js/learn.js?1604754605"></script>
+    <script src="/js/hugo-learn.js?1604754605"></script>
 
-    <link href="/mermaid/mermaid.css?1598905846" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1598905846"></script>
+    <link href="/mermaid/mermaid.css?1604754605" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1604754605"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

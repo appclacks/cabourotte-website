@@ -27,10 +27,10 @@ http:
   # A list of IPs (v4 or v6) which will be compared to the
   # DNS lookup results. The healthcheck will fail if the IPs defined
   # in this list are not returned
-  expected_ips:
+  expected-ips:
     - 165.1.3.4
 # The dns_checks section can be used to configure DNS healthchecks
-dns_checks:
+dns-checks:
     # The healthcheck name
   - name: "mcorbin-dns-check"
     # The healthcheck description
@@ -44,13 +44,13 @@ dns_checks:
     labels:
       environment: prod
 # The http_checks section can be used to configure HTTP healthchecks
-http_checks:
+http-checks:
     # The healthcheck name
   - name: "mcorbin-http-check"
     # The healthcheck description
     description: "http healthcheck example"
     # The list of HTTP status codes to consider the healthcheck successful
-    valid_status:
+    valid-status:
       - 200
       - 201
     # The healthcheck target. It can be an IP (v4 or v6) or a domain
@@ -73,7 +73,7 @@ http_checks:
     # Body to pass to the request (optional)
       body: "my request body"
     # A list of regular expression. The response body should match them (optional)
-    body_regexp
+    body-regexp:
       - "foo!"
     # A cacert for mTLS (optional)
     cacert: "/tmp/cacert.pem"
@@ -82,13 +82,13 @@ http_checks:
     # A key for mTLS (optional)
     key: "/tmp/foo.key"
     # The source IP which will be used for healthchecks (optional)
-    source_ip: "10.1.1.2"
+    source-ip: "10.1.1.2"
     # Labels for this healthcheck. It will be used in logging and in
     # exporters (optional)
     labels:
       environment: prod
 # The tcp_checks section can be used to configure HTTP healthchecks
-tcp_checks:
+tcp-checks:
     # The healthcheck name
   - name: "mcorbin-tcp-check"
     # The healthcheck description
@@ -102,16 +102,16 @@ tcp_checks:
     # The healthcheck interval
     interval: 10s
     # The source IP which will be used for healthchecks (optional)
-    source_ip: "10.1.1.2"
+    source-ip: "10.1.1.2"
     # If set to true, the healthcheck will be considered successful it the TCP
     # connection fails (optional, default to false)
-    should_fail: true
+    should-fail: true
     # Labels for this healthcheck. It will be used in logging and in
     # exporters (optional)
     labels:
       environment: prod
 # the tls_checks section can be used to configure TLS healthchecks
-tls_checks:
+tls-checks:
     # The healthcheck name
   - name: "mcorbin-tls-check"
     # The healthcheck description
@@ -125,15 +125,15 @@ tls_checks:
     # The healthcheck interval
     interval: 10s
     # The source IP which will be used for healthchecks (optional)
-    source_ip: "10.1.1.2"
-    # The SNI which will be used by the healthcheck (optional, default to the target value).
-    server_name: example.com
+    source-ip: "10.1.1.2"
+    # The SNI which will be used by the healthcheck (optional, default to the target value)
+    server-name: example.com
     # Enable or disable insecure TLS connections (default to false)
     insecure: false
     # Verifies if the certificate expires in this delay (optional). The healthcheck will
     # fail if the certificat expires soon.
     # The format is the duration format of Golang: https://golang.org/pkg/time/#ParseDuration
-    expiration_delay: 240h
+    expiration-delay: 240h
     # A cacert for mTLS (optional)
     cacert: "/tmp/cacert.pem"
     # A cert for mTLS (optional)
