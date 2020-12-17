@@ -38,7 +38,7 @@ dns-checks:
     # DNS lookup results. The healthcheck will fail if the IPs defined
     # in this list are not returned
     expected-ips:
-    - 165.1.3.4
+      - 165.1.3.4
     # Labels for this healthcheck. It will be used in logging and in
     # exporters (optional)
     labels:
