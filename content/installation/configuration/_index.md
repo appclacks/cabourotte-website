@@ -24,12 +24,7 @@ http:
   cert: "/tmp/cert.pem"
   # A key for mTLS (optional)
   key: "/tmp/foo.key"
-  # A list of IPs (v4 or v6) which will be compared to the
-  # DNS lookup results. The healthcheck will fail if the IPs defined
-  # in this list are not returned
-  expected-ips:
-    - 165.1.3.4
-# The dns_checks section can be used to configure DNS healthchecks
+# The dns-checks section can be used to configure DNS healthchecks
 dns-checks:
     # The healthcheck name
   - name: "mcorbin-dns-check"
@@ -39,11 +34,16 @@ dns-checks:
     domain: "mcorbin.fr"
     # The healthcheck interval
     interval: 5s
+    # A list of IPs (v4 or v6) which will be compared to the
+    # DNS lookup results. The healthcheck will fail if the IPs defined
+    # in this list are not returned
+    expected-ips:
+    - 165.1.3.4
     # Labels for this healthcheck. It will be used in logging and in
     # exporters (optional)
     labels:
       environment: prod
-# The http_checks section can be used to configure HTTP healthchecks
+# The http-checks section can be used to configure HTTP healthchecks
 http-checks:
     # The healthcheck name
   - name: "mcorbin-http-check"
@@ -87,7 +87,7 @@ http-checks:
     # exporters (optional)
     labels:
       environment: prod
-# The tcp_checks section can be used to configure HTTP healthchecks
+# The tcp-checks section can be used to configure HTTP healthchecks
 tcp-checks:
     # The healthcheck name
   - name: "mcorbin-tcp-check"
@@ -110,7 +110,7 @@ tcp-checks:
     # exporters (optional)
     labels:
       environment: prod
-# the tls_checks section can be used to configure TLS healthchecks
+# the tls-checks section can be used to configure TLS healthchecks
 tls-checks:
     # The healthcheck name
   - name: "mcorbin-tls-check"
