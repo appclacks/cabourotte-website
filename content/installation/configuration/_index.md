@@ -71,7 +71,7 @@ http-checks:
     headers:
       foo: "bar"
     # Body to pass to the request (optional)
-      body: "my request body"
+    body: "my request body"
     # A list of regular expression. The response body should match them (optional)
     body-regexp:
       - "foo!"
