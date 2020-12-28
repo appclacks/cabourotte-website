@@ -17,7 +17,7 @@ cat <<EOF > /tmp/cabourotte.yaml
 http:
   host: "0.0.0.0"
   port: 9013
-dns_checks:
+dns-checks:
   - name: "dns-check"
     description: "example"
     domain: "mcorbin.fr"
@@ -28,5 +28,5 @@ EOF
 Then, launch Docker and mount this configuration file on the container:
 
 ```
-docker run -v /tmp/cabourotte.yaml:/cabourotte.yaml mcorbin/cabourotte:v0.5.0
+docker run -v /tmp/cabourotte.yaml:/cabourotte.yaml mcorbin/cabourotte:v0.7.0
 ```
