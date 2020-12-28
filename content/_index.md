@@ -11,5 +11,6 @@ Cabourotte is a tool which allow you to execute healthchecks (HTTP(s), TCP, DNS,
 - Support exporters, which can be configured to push the healthchecks results to another systems.
 - `One-Off` healthchecks: You can send requests to the API to execute healthchecks and get the healthchecks results in the responses.
 - Hot reload on a SIGHUP.
+- A small frontend to see the current healthchecks status
 
-Lightweight, written in Golang, Cabourotte can be run everywhere to detect services and network failures.
+Lightweight, written in Golang, Cabourotte can run everywhere to detect services and network failures.

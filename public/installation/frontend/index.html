@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>API :: Cabourotte verifies if your infrastructure is healthy</title>
+    <title>Frontend :: Cabourotte verifies if your infrastructure is healthy</title>
 
     
     <link href="/css/nucleus.css?1609186960" rel="stylesheet">
@@ -40,7 +40,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/api/">
+  <body class="" data-url="/installation/frontend/">
     <nav id="sidebar" class="">
 
 
@@ -85,7 +85,7 @@
   
     
     <li data-nav-id="/installation/" title="Installation" class="dd-item 
-        
+        parent
         
         
         ">
@@ -218,8 +218,8 @@
   
     
     <li data-nav-id="/installation/frontend/" title="Frontend" class="dd-item 
-        
-        
+        parent
+        active
         
         ">
       <a href="/installation/frontend/">
@@ -251,8 +251,8 @@
   
     
     <li data-nav-id="/api/" title="API" class="dd-item 
-        parent
-        active
+        
+        
         
         ">
       <a href="/api/">
@@ -527,6 +527,8 @@
                         </a>
                     </span>
                   
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
                   <span class="links">
                  
                  
@@ -537,7 +539,13 @@
             
           
           
-            <a href='/'></a> > API
+            
+            
+          
+          
+            <a href='/'></a> > <a href='/installation/'>Installation</a> > Frontend
+          
+        
           
         
           
@@ -546,6 +554,20 @@
                   </span>
                 </div>
                 
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#the-cabourotte-frontend">The Cabourotte Frontend</a></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+                
               </div>
             </div>
             
@@ -553,9 +575,12 @@
         
         </div>
         
-          <div id="chapter">
-        
         <div id="body-inner">
+          
+            <h1>
+              
+              Frontend
+            </h1>
           
 
         
@@ -564,11 +589,13 @@
 
 	
 
-<h1 id="api">API</h1>
+<h2 id="the-cabourotte-frontend">The Cabourotte Frontend</h2>
 
-<p>The Cabourotte API, with examples.</p>
+<p>Cabourotte provides a frontend showing the current healthchecks status. The frontend is available on the <code>/frontend</code> URL.</p>
 
-<p>In these examples, we consider that Cabourotte is running on <code>127.0.0.1:9031</code>.</p>
+<p>I&rsquo;m not a frontend developer so help is welcome to improve the interface.</p>
+
+<p><img src="/frontend.jpg" alt="Frontend" /></p>
 
 
 
@@ -578,8 +605,6 @@
 	
 </footer>
 
-        
-            </div> 
         
         </div> 
         
@@ -611,8 +636,6 @@
             
                 
                     
-                        
-                        
                     
                 
                 
@@ -628,6 +651,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -693,6 +719,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -712,6 +739,8 @@
             
                 
                     
+                        
+                        
                     
                 
                 
@@ -727,9 +756,6 @@
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -854,10 +880,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/installation/frontend/" title="Frontend"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/installation/monitoring/" title="Monitoring"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/api/healthcheck/" title="Healthcheck" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/api/" title="API" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

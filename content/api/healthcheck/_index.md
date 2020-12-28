@@ -12,6 +12,8 @@ The availables options for healthchecks are exactly the same than the one descri
 
 If the parameter `one-off` is set to `true` in the payload, the healthcheck will be instantly executed and the result will be returned in the HTTP response (an example is available on this page). In that case, the healthcheck will **not** be periodically executed.
 
+A bulk endpoint allows you to configure all healthchecks in one API call.
+
 ### Create a HTTP healthcheck
 
 - **POST** /healthcheck/http
@@ -59,6 +61,47 @@ curl -H "Content-Type: application/json" 127.0.0.1:9013/healthcheck/dns -d '{"na
 curl -H "Content-Type: application/json" 127.0.0.1:9013/healthcheck/tls -d '{"name":"mcorbin-tls-check","description":"tls healthcheck example","target":"mcorbin.fr","interval":"5s","timeout": "3s","port":443, "expiration-delay": "48h"}'
 
 {"message":"Healthcheck successfully added"}
+```
+
+### Create several healthchecks (bulk)
+
+This endpoint can be used to create several healthchecks at once. When this endpoint is used, Cabourotte will:
+
+Add (or update if it already exists) all healthchecks passed as parameter
+
+Stop all healthchecks not managed by the configuration file and not passed as parameter. This point is important, you cannot use this API call to create or update only a subset of your healthchecks.
+
+- **POST** /healthcheck/bulk
+
+---
+
+```
+curl -H "Content-Type: application/json" 127.0.0.1:9013/healthcheck/bulk -d '
+{
+  "tls-checks": [
+    {
+      "name": "mcorbin-tls-check",
+      "description": "tls healthcheck example",
+      "target": "mcorbin.fr",
+      "interval": "5s",
+      "timeout": "3s",
+      "port": 443,
+      "expiration-delay": "48h"
+    }
+  ],
+  "tcp-checks": [
+    "..."
+  ],
+  "http-checks": [
+    "..."
+  ],
+  "dns-checks": [
+    "..."
+  ]
+}
+'
+
+{"message":"Healthchecks successfully added"}
 ```
 
 ### Create a One-Off healthcheck
@@ -121,10 +164,7 @@ curl 127.0.0.1:9013/healthcheck
     "target": "mcorbin.fr",
     "port": 443,
     "redirect": false,
-    "headers": null,
     "protocol": "https",
-    "path": "",
-    "body-regexp": null,
     "timeout": "3s",
     "interval": "5s",
     "one-off": false
