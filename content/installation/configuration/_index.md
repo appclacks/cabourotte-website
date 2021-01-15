@@ -81,6 +81,8 @@ http-checks:
     cert: "/tmp/cert.pem"
     # A key for mTLS (optional)
     key: "/tmp/foo.key"
+    # Enable or disable insecure TLS connections (default to false)
+    insecure: false
     # The source IP which will be used for healthchecks (optional)
     source-ip: "10.1.1.2"
     # Labels for this healthcheck. It will be used in logging and in

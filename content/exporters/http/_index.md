@@ -12,7 +12,7 @@ Exporters should be configured in the YAML configuration file. You can see how t
 
 ## Payload format
 
-Here is an example payload sent by the HTTP exporter for a successful DNS healthcheck:
+Here is an example payload sent (using HTTP POST) by the HTTP exporter for a successful DNS healthcheck:
 
 ```json
 [
@@ -23,7 +23,7 @@ Here is an example payload sent by the HTTP exporter for a successful DNS health
       "environment": "prod"
     },
     "success": true,
-    "timestamp": "2020-08-31T22:16:00.925315875+02:00",
+    "healthcheck-timestamp": 1610744658,
     "message": "success"
   }
 ]
@@ -32,7 +32,7 @@ Here is an example payload sent by the HTTP exporter for a successful DNS health
 - `name` is the healthcheck name.
 - `summary` is a small string with some information about the healthcheck.
 - `success` indicates if the healthcheck was successful or not.
-- `timestamp` is when the healthcheck was executed.
+- `healthcheck-timestamp` is when the healthcheck was executed.
 - `message` is a message containing `success` in case of a successful healthcheck, or an error message in case of a failure.
 
 As you can see, the payload is a list of maps. Cabourotte may batch healthchecks result in the future.
