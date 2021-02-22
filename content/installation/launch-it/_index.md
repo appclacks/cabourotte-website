@@ -28,5 +28,5 @@ EOF
 Then, launch Docker and mount this configuration file on the container:
 
 ```
-docker run -v /tmp/cabourotte.yaml:/cabourotte.yaml mcorbin/cabourotte:v0.7.0
+docker run -v /tmp/cabourotte.yaml:/cabourotte.yaml mcorbin/cabourotte:v0.9.0
 ```

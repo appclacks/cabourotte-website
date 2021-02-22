@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.56.2" />
+    <meta name="generator" content="Hugo 0.80.0" />
     <meta name="description" content="">
 
 
@@ -12,21 +12,21 @@
     <title>Launch it :: Cabourotte verifies if your infrastructure is healthy</title>
 
     
-    <link href="/css/nucleus.css?1610745541" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1610745541" rel="stylesheet">
-    <link href="/css/hybrid.css?1610745541" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1610745541" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1610745541" rel="stylesheet">
-    <link href="/css/auto-complete.css?1610745541" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1610745541" rel="stylesheet">
-    <link href="/css/theme.css?1610745541" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1610745541" rel="stylesheet">
+    <link href="/css/nucleus.css?1614003363" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1614003363" rel="stylesheet">
+    <link href="/css/hybrid.css?1614003363" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1614003363" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1614003363" rel="stylesheet">
+    <link href="/css/auto-complete.css?1614003363" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1614003363" rel="stylesheet">
+    <link href="/css/theme.css?1614003363" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1614003363" rel="stylesheet">
     
-    <link href="/css/theme-blue.css?1610745541" rel="stylesheet">
+    <link href="/css/theme-blue.css?1614003363" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1610745541"></script>
+    <script src="/js/jquery-3.3.1.min.js?1614003363"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -59,14 +59,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1610745541"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1610745541"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1614003363"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1614003363"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/cabourotte.mcorbin.fr";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1610745541"></script>
+<script type="text/javascript" src="/js/search.js?1614003363"></script>
 
     
   </div>
@@ -557,13 +557,10 @@
                     <div class="progress">
     <div class="wrapper">
 <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#with-the-binary">With the binary</a></li>
-<li><a href="#with-docker">With Docker</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#with-the-binary">With the binary</a></li>
+    <li><a href="#with-docker">With Docker</a></li>
+  </ul>
 </nav>
     </div>
 </div>
@@ -588,16 +585,10 @@
 
 
 
-	
-
-<h2 id="with-the-binary">With the binary</h2>
-
+	<h2 id="with-the-binary">With the binary</h2>
 <p>You can launch the daemon with the command <code>cabourotte daemon --config &lt;path_to_yaml_config&gt;</code>.</p>
-
 <h2 id="with-docker">With Docker</h2>
-
 <p>You should first create a <a href="/installation/configuration/">configuration file</a>, for example:</p>
-
 <pre><code>cat &lt;&lt;EOF &gt; /tmp/cabourotte.yaml
 http:
   host: &quot;0.0.0.0&quot;
@@ -608,13 +599,9 @@ dns-checks:
     domain: &quot;mcorbin.fr&quot;
     interval: 3s
 EOF
+</code></pre><p>Then, launch Docker and mount this configuration file on the container:</p>
+<pre><code>docker run -v /tmp/cabourotte.yaml:/cabourotte.yaml mcorbin/cabourotte:v0.9.0
 </code></pre>
-
-<p>Then, launch Docker and mount this configuration file on the container:</p>
-
-<pre><code>docker run -v /tmp/cabourotte.yaml:/cabourotte.yaml mcorbin/cabourotte:v0.7.0
-</code></pre>
-
 
 
 
@@ -911,19 +898,19 @@ EOF
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1610745541"></script>
-    <script src="/js/perfect-scrollbar.min.js?1610745541"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1610745541"></script>
-    <script src="/js/jquery.sticky.js?1610745541"></script>
-    <script src="/js/featherlight.min.js?1610745541"></script>
-    <script src="/js/highlight.pack.js?1610745541"></script>
+    <script src="/js/clipboard.min.js?1614003363"></script>
+    <script src="/js/perfect-scrollbar.min.js?1614003363"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1614003363"></script>
+    <script src="/js/jquery.sticky.js?1614003363"></script>
+    <script src="/js/featherlight.min.js?1614003363"></script>
+    <script src="/js/highlight.pack.js?1614003363"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1610745541"></script>
-    <script src="/js/learn.js?1610745541"></script>
-    <script src="/js/hugo-learn.js?1610745541"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1614003363"></script>
+    <script src="/js/learn.js?1614003363"></script>
+    <script src="/js/hugo-learn.js?1614003363"></script>
 
-    <link href="/mermaid/mermaid.css?1610745541" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1610745541"></script>
+    <link href="/mermaid/mermaid.css?1614003363" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1614003363"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

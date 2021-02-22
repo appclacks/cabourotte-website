@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.56.2" />
+    <meta name="generator" content="Hugo 0.80.0" />
     <meta name="description" content="">
 
 
@@ -12,21 +12,21 @@
     <title>Monitoring :: Cabourotte verifies if your infrastructure is healthy</title>
 
     
-    <link href="/css/nucleus.css?1610745541" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1610745541" rel="stylesheet">
-    <link href="/css/hybrid.css?1610745541" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1610745541" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1610745541" rel="stylesheet">
-    <link href="/css/auto-complete.css?1610745541" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1610745541" rel="stylesheet">
-    <link href="/css/theme.css?1610745541" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1610745541" rel="stylesheet">
+    <link href="/css/nucleus.css?1614003363" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1614003363" rel="stylesheet">
+    <link href="/css/hybrid.css?1614003363" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1614003363" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1614003363" rel="stylesheet">
+    <link href="/css/auto-complete.css?1614003363" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1614003363" rel="stylesheet">
+    <link href="/css/theme.css?1614003363" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1614003363" rel="stylesheet">
     
-    <link href="/css/theme-blue.css?1610745541" rel="stylesheet">
+    <link href="/css/theme-blue.css?1614003363" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1610745541"></script>
+    <script src="/js/jquery-3.3.1.min.js?1614003363"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -59,14 +59,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1610745541"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1610745541"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1614003363"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1614003363"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/cabourotte.mcorbin.fr";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1610745541"></script>
+<script type="text/javascript" src="/js/search.js?1614003363"></script>
 
     
   </div>
@@ -557,13 +557,10 @@
                     <div class="progress">
     <div class="wrapper">
 <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#metrics">Metrics</a></li>
-<li><a href="#health-endpoints">Health endpoints</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#metrics">Metrics</a></li>
+    <li><a href="#health-endpoints">Health endpoints</a></li>
+  </ul>
 </nav>
     </div>
 </div>
@@ -588,43 +585,29 @@
 
 
 
-	
-
-<h2 id="metrics">Metrics</h2>
-
+	<h2 id="metrics">Metrics</h2>
 <p>Cabourotte exposes various metrics about itself and about healthchecks on the <code>/metrics</code> endpoint using the Prometheus format.</p>
-
 <p>Here are some interesting metrics exposed:</p>
-
 <p><strong>exporters</strong></p>
-
 <ul>
 <li><code>exporter_duration_seconds_bucket</code>: The duration for the healthchecks exporters. Labels are <code>status</code>, which indicates if healthchecks were exported successfully or not, and <code>name</code> which is the exporter name.</li>
 <li><code>exporter_duration_seconds_count</code>: The number of events exported to exporters. The labels are the same than the previous metric.</li>
 <li><code>result_chan_size</code>: Healthchecks results are pushed into a Golang channel. The size of the channel is limited. This metric indicates the channel size. If healthchecks are not pushed fast enough to the exporters, this channel could be full.</li>
 </ul>
-
 <p><strong>healthchecks</strong></p>
-
 <ul>
 <li><code>healthcheck_duration_seconds_bucket</code>: The duration for the healthchecks executions. Labels are <code>status</code>, which indicates if the healthchecks were successful or not, and <code>name</code> which is the healthcheck name.</li>
 <li><code>healthcheck_duration_seconds_count</code>: The number of execution for each healthchecks. Labels are the same than the previous metric.</li>
 </ul>
-
 <p><strong>API</strong></p>
-
 <ul>
 <li><code>http_requests_duration_second_bucket</code>: The duration of HTTP requests. Labels are <code>method</code>, which is the HTTP method of the request, and <code>path</code> which is the HTTP path of the request.</li>
 <li><code>http_requests_duration_second_count</code>: The number of HTTP requests. Labels are the same than the previous metric.</li>
 <li><code>http_responses_total</code>: A counter for HTTP responses Labels are <code>method</code>, <code>path</code> and also <code>status</code>, which is the response HTTP status.</li>
 </ul>
-
 <p><strong>Go metrics</strong></p>
-
 <p>Metrics prefixed by <code>go</code> are golang internal metrics.</p>
-
 <h2 id="health-endpoints">Health endpoints</h2>
-
 <p>Cabourotte provides the <code>/health</code> and <code>/healthz</code> endpoints. You can use them to check if Cabourotte is started or not.</p>
 
 
@@ -923,19 +906,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1610745541"></script>
-    <script src="/js/perfect-scrollbar.min.js?1610745541"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1610745541"></script>
-    <script src="/js/jquery.sticky.js?1610745541"></script>
-    <script src="/js/featherlight.min.js?1610745541"></script>
-    <script src="/js/highlight.pack.js?1610745541"></script>
+    <script src="/js/clipboard.min.js?1614003363"></script>
+    <script src="/js/perfect-scrollbar.min.js?1614003363"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1614003363"></script>
+    <script src="/js/jquery.sticky.js?1614003363"></script>
+    <script src="/js/featherlight.min.js?1614003363"></script>
+    <script src="/js/highlight.pack.js?1614003363"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1610745541"></script>
-    <script src="/js/learn.js?1610745541"></script>
-    <script src="/js/hugo-learn.js?1610745541"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1614003363"></script>
+    <script src="/js/learn.js?1614003363"></script>
+    <script src="/js/hugo-learn.js?1614003363"></script>
 
-    <link href="/mermaid/mermaid.css?1610745541" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1610745541"></script>
+    <link href="/mermaid/mermaid.css?1614003363" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1614003363"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

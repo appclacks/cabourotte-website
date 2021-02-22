@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.56.2" />
+    <meta name="generator" content="Hugo 0.80.0" />
     <meta name="description" content="">
 
 
@@ -12,21 +12,21 @@
     <title>Configuration :: Cabourotte verifies if your infrastructure is healthy</title>
 
     
-    <link href="/css/nucleus.css?1610745541" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1610745541" rel="stylesheet">
-    <link href="/css/hybrid.css?1610745541" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1610745541" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1610745541" rel="stylesheet">
-    <link href="/css/auto-complete.css?1610745541" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1610745541" rel="stylesheet">
-    <link href="/css/theme.css?1610745541" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1610745541" rel="stylesheet">
+    <link href="/css/nucleus.css?1614003363" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1614003363" rel="stylesheet">
+    <link href="/css/hybrid.css?1614003363" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1614003363" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1614003363" rel="stylesheet">
+    <link href="/css/auto-complete.css?1614003363" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1614003363" rel="stylesheet">
+    <link href="/css/theme.css?1614003363" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1614003363" rel="stylesheet">
     
-    <link href="/css/theme-blue.css?1610745541" rel="stylesheet">
+    <link href="/css/theme-blue.css?1614003363" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1610745541"></script>
+    <script src="/js/jquery-3.3.1.min.js?1614003363"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -59,14 +59,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1610745541"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1610745541"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1614003363"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1614003363"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/cabourotte.mcorbin.fr";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1610745541"></script>
+<script type="text/javascript" src="/js/search.js?1614003363"></script>
 
     
   </div>
@@ -557,12 +557,9 @@
                     <div class="progress">
     <div class="wrapper">
 <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#configuring-cabourotte">Configuring Cabourotte</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#configuring-cabourotte">Configuring Cabourotte</a></li>
+  </ul>
 </nav>
     </div>
 </div>
@@ -587,172 +584,165 @@
 
 
 
-	
-
-<h2 id="configuring-cabourotte">Configuring Cabourotte</h2>
-
+	<h2 id="configuring-cabourotte">Configuring Cabourotte</h2>
 <p>Cabourotte is configured through a YAML file (althought healthchecks can be dynamically configured using the API).</p>
-
 <p>Here is a commented example of a Cabourotte configuration:</p>
-
-<pre><code class="language-yaml">---
-# the http section is used to configure the Cabourotte HTTP server
-http:
-  # The HTTP server host
-  host: &quot;127.0.0.1&quot;
-  # The HTTP server port
-  port: 9013
-  # A cacert for mTLS (optional)
-  cacert: &quot;/tmp/cacert.pem&quot;
-  # A cert for mTLS (optional)
-  cert: &quot;/tmp/cert.pem&quot;
-  # A key for mTLS (optional)
-  key: &quot;/tmp/foo.key&quot;
-# The dns-checks section can be used to configure DNS healthchecks
-dns-checks:
-    # The healthcheck name
-  - name: &quot;mcorbin-dns-check&quot;
-    # The healthcheck description
-    description: &quot;dns healthcheck example&quot;
-    # The healthcheck domain
-    domain: &quot;mcorbin.fr&quot;
-    # The healthcheck interval
-    interval: 5s
-    # A list of IPs (v4 or v6) which will be compared to the
-    # DNS lookup results. The healthcheck will fail if the IPs defined
-    # in this list are not returned
-    expected-ips:
-      - 165.1.3.4
-    # Labels for this healthcheck. It will be used in logging and in
-    # exporters (optional)
-    labels:
-      environment: prod
-# The http-checks section can be used to configure HTTP healthchecks
-http-checks:
-    # The healthcheck name
-  - name: &quot;mcorbin-http-check&quot;
-    # The healthcheck description
-    description: &quot;http healthcheck example&quot;
-    # The list of HTTP status codes to consider the healthcheck successful
-    valid-status:
-      - 200
-      - 201
-    # The healthcheck target. It can be an IP (v4 or v6) or a domain
-    target: &quot;mcorbin.fr&quot;
-    # The target port
-    port: 443
-    # The protocol (http or https)
-    protocol: &quot;https&quot;
-    # The HTTP path of the healthcheck
-    path: &quot;/&quot;
-    # The healthcheck timeout
-    timeout: 5s
-    # The healthcheck interval
-    interval: 10s
-    # Follow redirect (optional, default false)
-    redirect: true
-    # Extra headers to add to the request (optional)
-    headers:
-      foo: &quot;bar&quot;
-    # Body to pass to the request (optional)
-    body: &quot;my request body&quot;
-    # A list of regular expression. The response body should match them (optional)
-    body-regexp:
-      - &quot;foo!&quot;
-    # A cacert for mTLS (optional)
-    cacert: &quot;/tmp/cacert.pem&quot;
-    # A cert for mTLS (optional)
-    cert: &quot;/tmp/cert.pem&quot;
-    # A key for mTLS (optional)
-    key: &quot;/tmp/foo.key&quot;
-    # Enable or disable insecure TLS connections (default to false)
-    insecure: false
-    # The source IP which will be used for healthchecks (optional)
-    source-ip: &quot;10.1.1.2&quot;
-    # Labels for this healthcheck. It will be used in logging and in
-    # exporters (optional)
-    labels:
-      environment: prod
-# The tcp-checks section can be used to configure HTTP healthchecks
-tcp-checks:
-    # The healthcheck name
-  - name: &quot;mcorbin-tcp-check&quot;
-    # The healthcheck description
-    description: &quot;tcp healthcheck example&quot;
-    # The healthcheck target. It can be an IP (v4 or v6) or a domain
-    target: &quot;mcorbin.fr&quot;
-    # The target port
-    port: 443
-    # The healthcheck timeout
-    timeout: 2s
-    # The healthcheck interval
-    interval: 10s
-    # The source IP which will be used for healthchecks (optional)
-    source-ip: &quot;10.1.1.2&quot;
-    # If set to true, the healthcheck will be considered successful it the TCP
-    # connection fails (optional, default to false)
-    should-fail: true
-    # Labels for this healthcheck. It will be used in logging and in
-    # exporters (optional)
-    labels:
-      environment: prod
-# the tls-checks section can be used to configure TLS healthchecks
-tls-checks:
-    # The healthcheck name
-  - name: &quot;mcorbin-tls-check&quot;
-    # The healthcheck description
-    description: &quot;tcp healthcheck example&quot;
-    # The healthcheck target. It can be an IP (v4 or v6) or a domain
-    target: &quot;mcorbin.fr&quot;
-    # The target port
-    port: 443
-    # The healthcheck timeout
-    timeout: 2s
-    # The healthcheck interval
-    interval: 10s
-    # The source IP which will be used for healthchecks (optional)
-    source-ip: &quot;10.1.1.2&quot;
-    # The SNI which will be used by the healthcheck (optional, default to the target value)
-    server-name: example.com
-    # Enable or disable insecure TLS connections (default to false)
-    insecure: false
-    # Verifies if the certificate expires in this delay (optional). The healthcheck will
-    # fail if the certificat expires soon.
-    # The format is the duration format of Golang: https://golang.org/pkg/time/#ParseDuration
-    expiration-delay: 240h
-    # A cacert for mTLS (optional)
-    cacert: &quot;/tmp/cacert.pem&quot;
-    # A cert for mTLS (optional)
-    cert: &quot;/tmp/cert.pem&quot;
-    # A key for mTLS (optional)
-    key: &quot;/tmp/foo.key&quot;
-    # Labels for this healthcheck. It will be used in logging and in
-    # exporters (optional)
-    labels:
-      environment: prod
-# The exporters section can be used to configure exporters.
-exporters:
-  # a list of HTTP exporters
-  http:
-      # The exporter name
-    - name: http-exporter
-      # The exporter endpoint
-      host: &quot;127.0.0.1&quot;
-      # The exporter port
-      port: 9595
-      # The exporter path
-      path: &quot;/&quot;
-      # The exporter protocol (http or https)
-      protocol: &quot;http&quot;
-      # A cacert for mTLS (optional)
-      cacert: &quot;/tmp/cacert.pem&quot;
-      # A cert for mTLS (optional)
-      cert: &quot;/tmp/cert.pem&quot;
-      # A key for mTLS (optional)
-      key: &quot;/tmp/foo.key&quot;
-</code></pre>
-
-<p>healthchecks names should be unique (you cannot have 2 healthchecks configured with the same name). Same for exporters.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">---
+<span style="color:#75715e"># the http section is used to configure the Cabourotte HTTP server</span>
+<span style="color:#f92672">http</span>:
+  <span style="color:#75715e"># The HTTP server host</span>
+  <span style="color:#f92672">host</span>: <span style="color:#e6db74">&#34;127.0.0.1&#34;</span>
+  <span style="color:#75715e"># The HTTP server port</span>
+  <span style="color:#f92672">port</span>: <span style="color:#ae81ff">9013</span>
+  <span style="color:#75715e"># A cacert for mTLS (optional)</span>
+  <span style="color:#f92672">cacert</span>: <span style="color:#e6db74">&#34;/tmp/cacert.pem&#34;</span>
+  <span style="color:#75715e"># A cert for mTLS (optional)</span>
+  <span style="color:#f92672">cert</span>: <span style="color:#e6db74">&#34;/tmp/cert.pem&#34;</span>
+  <span style="color:#75715e"># A key for mTLS (optional)</span>
+  <span style="color:#f92672">key</span>: <span style="color:#e6db74">&#34;/tmp/foo.key&#34;</span>
+<span style="color:#75715e"># The dns-checks section can be used to configure DNS healthchecks</span>
+<span style="color:#f92672">dns-checks</span>:
+    <span style="color:#75715e"># The healthcheck name</span>
+  - <span style="color:#f92672">name</span>: <span style="color:#e6db74">&#34;mcorbin-dns-check&#34;</span>
+    <span style="color:#75715e"># The healthcheck description</span>
+    <span style="color:#f92672">description</span>: <span style="color:#e6db74">&#34;dns healthcheck example&#34;</span>
+    <span style="color:#75715e"># The healthcheck domain</span>
+    <span style="color:#f92672">domain</span>: <span style="color:#e6db74">&#34;mcorbin.fr&#34;</span>
+    <span style="color:#75715e"># The healthcheck interval</span>
+    <span style="color:#f92672">interval</span>: <span style="color:#ae81ff">5s</span>
+    <span style="color:#75715e"># A list of IPs (v4 or v6) which will be compared to the</span>
+    <span style="color:#75715e"># DNS lookup results. The healthcheck will fail if the IPs defined</span>
+    <span style="color:#75715e"># in this list are not returned</span>
+    <span style="color:#f92672">expected-ips</span>:
+      - <span style="color:#ae81ff">165.1.3.4</span>
+    <span style="color:#75715e"># Labels for this healthcheck. It will be used in logging and in</span>
+    <span style="color:#75715e"># exporters (optional)</span>
+    <span style="color:#f92672">labels</span>:
+      <span style="color:#f92672">environment</span>: <span style="color:#ae81ff">prod</span>
+<span style="color:#75715e"># The http-checks section can be used to configure HTTP healthchecks</span>
+<span style="color:#f92672">http-checks</span>:
+    <span style="color:#75715e"># The healthcheck name</span>
+  - <span style="color:#f92672">name</span>: <span style="color:#e6db74">&#34;mcorbin-http-check&#34;</span>
+    <span style="color:#75715e"># The healthcheck description</span>
+    <span style="color:#f92672">description</span>: <span style="color:#e6db74">&#34;http healthcheck example&#34;</span>
+    <span style="color:#75715e"># The list of HTTP status codes to consider the healthcheck successful</span>
+    <span style="color:#f92672">valid-status</span>:
+      - <span style="color:#ae81ff">200</span>
+      - <span style="color:#ae81ff">201</span>
+    <span style="color:#75715e"># The healthcheck target. It can be an IP (v4 or v6) or a domain</span>
+    <span style="color:#f92672">target</span>: <span style="color:#e6db74">&#34;mcorbin.fr&#34;</span>
+    <span style="color:#75715e"># The target port</span>
+    <span style="color:#f92672">port</span>: <span style="color:#ae81ff">443</span>
+    <span style="color:#75715e"># The protocol (http or https)</span>
+    <span style="color:#f92672">protocol</span>: <span style="color:#e6db74">&#34;https&#34;</span>
+    <span style="color:#75715e"># The HTTP path of the healthcheck</span>
+    <span style="color:#f92672">path</span>: <span style="color:#e6db74">&#34;/&#34;</span>
+    <span style="color:#75715e"># The healthcheck timeout</span>
+    <span style="color:#f92672">timeout</span>: <span style="color:#ae81ff">5s</span>
+    <span style="color:#75715e"># The healthcheck interval</span>
+    <span style="color:#f92672">interval</span>: <span style="color:#ae81ff">10s</span>
+    <span style="color:#75715e"># Follow redirect (optional, default false)</span>
+    <span style="color:#f92672">redirect</span>: <span style="color:#66d9ef">true</span>
+    <span style="color:#75715e"># Extra headers to add to the request (optional)</span>
+    <span style="color:#f92672">headers</span>:
+      <span style="color:#f92672">foo</span>: <span style="color:#e6db74">&#34;bar&#34;</span>
+    <span style="color:#75715e"># Body to pass to the request (optional)</span>
+    <span style="color:#f92672">body</span>: <span style="color:#e6db74">&#34;my request body&#34;</span>
+    <span style="color:#75715e"># A list of regular expression. The response body should match them (optional)</span>
+    <span style="color:#f92672">body-regexp</span>:
+      - <span style="color:#e6db74">&#34;foo!&#34;</span>
+    <span style="color:#75715e"># A cacert for mTLS (optional)</span>
+    <span style="color:#f92672">cacert</span>: <span style="color:#e6db74">&#34;/tmp/cacert.pem&#34;</span>
+    <span style="color:#75715e"># A cert for mTLS (optional)</span>
+    <span style="color:#f92672">cert</span>: <span style="color:#e6db74">&#34;/tmp/cert.pem&#34;</span>
+    <span style="color:#75715e"># A key for mTLS (optional)</span>
+    <span style="color:#f92672">key</span>: <span style="color:#e6db74">&#34;/tmp/foo.key&#34;</span>
+    <span style="color:#75715e"># Enable or disable insecure TLS connections (default to false)</span>
+    <span style="color:#f92672">insecure</span>: <span style="color:#66d9ef">false</span>
+    <span style="color:#75715e"># The source IP which will be used for healthchecks (optional)</span>
+    <span style="color:#f92672">source-ip</span>: <span style="color:#e6db74">&#34;10.1.1.2&#34;</span>
+    <span style="color:#75715e"># Labels for this healthcheck. It will be used in logging and in</span>
+    <span style="color:#75715e"># exporters (optional)</span>
+    <span style="color:#f92672">labels</span>:
+      <span style="color:#f92672">environment</span>: <span style="color:#ae81ff">prod</span>
+<span style="color:#75715e"># The tcp-checks section can be used to configure HTTP healthchecks</span>
+<span style="color:#f92672">tcp-checks</span>:
+    <span style="color:#75715e"># The healthcheck name</span>
+  - <span style="color:#f92672">name</span>: <span style="color:#e6db74">&#34;mcorbin-tcp-check&#34;</span>
+    <span style="color:#75715e"># The healthcheck description</span>
+    <span style="color:#f92672">description</span>: <span style="color:#e6db74">&#34;tcp healthcheck example&#34;</span>
+    <span style="color:#75715e"># The healthcheck target. It can be an IP (v4 or v6) or a domain</span>
+    <span style="color:#f92672">target</span>: <span style="color:#e6db74">&#34;mcorbin.fr&#34;</span>
+    <span style="color:#75715e"># The target port</span>
+    <span style="color:#f92672">port</span>: <span style="color:#ae81ff">443</span>
+    <span style="color:#75715e"># The healthcheck timeout</span>
+    <span style="color:#f92672">timeout</span>: <span style="color:#ae81ff">2s</span>
+    <span style="color:#75715e"># The healthcheck interval</span>
+    <span style="color:#f92672">interval</span>: <span style="color:#ae81ff">10s</span>
+    <span style="color:#75715e"># The source IP which will be used for healthchecks (optional)</span>
+    <span style="color:#f92672">source-ip</span>: <span style="color:#e6db74">&#34;10.1.1.2&#34;</span>
+    <span style="color:#75715e"># If set to true, the healthcheck will be considered successful it the TCP</span>
+    <span style="color:#75715e"># connection fails (optional, default to false)</span>
+    <span style="color:#f92672">should-fail</span>: <span style="color:#66d9ef">true</span>
+    <span style="color:#75715e"># Labels for this healthcheck. It will be used in logging and in</span>
+    <span style="color:#75715e"># exporters (optional)</span>
+    <span style="color:#f92672">labels</span>:
+      <span style="color:#f92672">environment</span>: <span style="color:#ae81ff">prod</span>
+<span style="color:#75715e"># the tls-checks section can be used to configure TLS healthchecks</span>
+<span style="color:#f92672">tls-checks</span>:
+    <span style="color:#75715e"># The healthcheck name</span>
+  - <span style="color:#f92672">name</span>: <span style="color:#e6db74">&#34;mcorbin-tls-check&#34;</span>
+    <span style="color:#75715e"># The healthcheck description</span>
+    <span style="color:#f92672">description</span>: <span style="color:#e6db74">&#34;tcp healthcheck example&#34;</span>
+    <span style="color:#75715e"># The healthcheck target. It can be an IP (v4 or v6) or a domain</span>
+    <span style="color:#f92672">target</span>: <span style="color:#e6db74">&#34;mcorbin.fr&#34;</span>
+    <span style="color:#75715e"># The target port</span>
+    <span style="color:#f92672">port</span>: <span style="color:#ae81ff">443</span>
+    <span style="color:#75715e"># The healthcheck timeout</span>
+    <span style="color:#f92672">timeout</span>: <span style="color:#ae81ff">2s</span>
+    <span style="color:#75715e"># The healthcheck interval</span>
+    <span style="color:#f92672">interval</span>: <span style="color:#ae81ff">10s</span>
+    <span style="color:#75715e"># The source IP which will be used for healthchecks (optional)</span>
+    <span style="color:#f92672">source-ip</span>: <span style="color:#e6db74">&#34;10.1.1.2&#34;</span>
+    <span style="color:#75715e"># The SNI which will be used by the healthcheck (optional, default to the target value)</span>
+    <span style="color:#f92672">server-name</span>: <span style="color:#ae81ff">example.com</span>
+    <span style="color:#75715e"># Enable or disable insecure TLS connections (default to false)</span>
+    <span style="color:#f92672">insecure</span>: <span style="color:#66d9ef">false</span>
+    <span style="color:#75715e"># Verifies if the certificate expires in this delay (optional). The healthcheck will</span>
+    <span style="color:#75715e"># fail if the certificat expires soon.</span>
+    <span style="color:#75715e"># The format is the duration format of Golang: https://golang.org/pkg/time/#ParseDuration</span>
+    <span style="color:#f92672">expiration-delay</span>: <span style="color:#ae81ff">240h</span>
+    <span style="color:#75715e"># A cacert for mTLS (optional)</span>
+    <span style="color:#f92672">cacert</span>: <span style="color:#e6db74">&#34;/tmp/cacert.pem&#34;</span>
+    <span style="color:#75715e"># A cert for mTLS (optional)</span>
+    <span style="color:#f92672">cert</span>: <span style="color:#e6db74">&#34;/tmp/cert.pem&#34;</span>
+    <span style="color:#75715e"># A key for mTLS (optional)</span>
+    <span style="color:#f92672">key</span>: <span style="color:#e6db74">&#34;/tmp/foo.key&#34;</span>
+    <span style="color:#75715e"># Labels for this healthcheck. It will be used in logging and in</span>
+    <span style="color:#75715e"># exporters (optional)</span>
+    <span style="color:#f92672">labels</span>:
+      <span style="color:#f92672">environment</span>: <span style="color:#ae81ff">prod</span>
+<span style="color:#75715e"># The exporters section can be used to configure exporters.</span>
+<span style="color:#f92672">exporters</span>:
+  <span style="color:#75715e"># a list of HTTP exporters</span>
+  <span style="color:#f92672">http</span>:
+      <span style="color:#75715e"># The exporter name</span>
+    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">http-exporter</span>
+      <span style="color:#75715e"># The exporter endpoint</span>
+      <span style="color:#f92672">host</span>: <span style="color:#e6db74">&#34;127.0.0.1&#34;</span>
+      <span style="color:#75715e"># The exporter port</span>
+      <span style="color:#f92672">port</span>: <span style="color:#ae81ff">9595</span>
+      <span style="color:#75715e"># The exporter path</span>
+      <span style="color:#f92672">path</span>: <span style="color:#e6db74">&#34;/&#34;</span>
+      <span style="color:#75715e"># The exporter protocol (http or https)</span>
+      <span style="color:#f92672">protocol</span>: <span style="color:#e6db74">&#34;http&#34;</span>
+      <span style="color:#75715e"># A cacert for mTLS (optional)</span>
+      <span style="color:#f92672">cacert</span>: <span style="color:#e6db74">&#34;/tmp/cacert.pem&#34;</span>
+      <span style="color:#75715e"># A cert for mTLS (optional)</span>
+      <span style="color:#f92672">cert</span>: <span style="color:#e6db74">&#34;/tmp/cert.pem&#34;</span>
+      <span style="color:#75715e"># A key for mTLS (optional)</span>
+      <span style="color:#f92672">key</span>: <span style="color:#e6db74">&#34;/tmp/foo.key&#34;</span>
+</code></pre></div><p>healthchecks names should be unique (you cannot have 2 healthchecks configured with the same name). Same for exporters.</p>
 
 
 
@@ -1050,19 +1040,19 @@ exporters:
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1610745541"></script>
-    <script src="/js/perfect-scrollbar.min.js?1610745541"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1610745541"></script>
-    <script src="/js/jquery.sticky.js?1610745541"></script>
-    <script src="/js/featherlight.min.js?1610745541"></script>
-    <script src="/js/highlight.pack.js?1610745541"></script>
+    <script src="/js/clipboard.min.js?1614003363"></script>
+    <script src="/js/perfect-scrollbar.min.js?1614003363"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1614003363"></script>
+    <script src="/js/jquery.sticky.js?1614003363"></script>
+    <script src="/js/featherlight.min.js?1614003363"></script>
+    <script src="/js/highlight.pack.js?1614003363"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1610745541"></script>
-    <script src="/js/learn.js?1610745541"></script>
-    <script src="/js/hugo-learn.js?1610745541"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1614003363"></script>
+    <script src="/js/learn.js?1614003363"></script>
+    <script src="/js/hugo-learn.js?1614003363"></script>
 
-    <link href="/mermaid/mermaid.css?1610745541" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1610745541"></script>
+    <link href="/mermaid/mermaid.css?1614003363" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1614003363"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.56.2" />
+    <meta name="generator" content="Hugo 0.80.0" />
     <meta name="description" content="">
 
 
@@ -12,21 +12,21 @@
     <title>HTTP :: Cabourotte verifies if your infrastructure is healthy</title>
 
     
-    <link href="/css/nucleus.css?1610745541" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1610745541" rel="stylesheet">
-    <link href="/css/hybrid.css?1610745541" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1610745541" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1610745541" rel="stylesheet">
-    <link href="/css/auto-complete.css?1610745541" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1610745541" rel="stylesheet">
-    <link href="/css/theme.css?1610745541" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1610745541" rel="stylesheet">
+    <link href="/css/nucleus.css?1614003363" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1614003363" rel="stylesheet">
+    <link href="/css/hybrid.css?1614003363" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1614003363" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1614003363" rel="stylesheet">
+    <link href="/css/auto-complete.css?1614003363" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1614003363" rel="stylesheet">
+    <link href="/css/theme.css?1614003363" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1614003363" rel="stylesheet">
     
-    <link href="/css/theme-blue.css?1610745541" rel="stylesheet">
+    <link href="/css/theme-blue.css?1614003363" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1610745541"></script>
+    <script src="/js/jquery-3.3.1.min.js?1614003363"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -59,14 +59,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1610745541"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1610745541"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1614003363"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1614003363"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/cabourotte.mcorbin.fr";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1610745541"></script>
+<script type="text/javascript" src="/js/search.js?1614003363"></script>
 
     
   </div>
@@ -557,13 +557,10 @@
                     <div class="progress">
     <div class="wrapper">
 <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#configuration">Configuration</a></li>
-<li><a href="#payload-format">Payload format</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#configuration">Configuration</a></li>
+    <li><a href="#payload-format">Payload format</a></li>
+  </ul>
 </nav>
     </div>
 </div>
@@ -588,40 +585,30 @@
 
 
 
-	
-
-<p>The HTTP exporter allows you to push healthchecks results to an HTTP endpoint.</p>
-
+	<p>The HTTP exporter allows you to push healthchecks results to an HTTP endpoint.</p>
 <h2 id="configuration">Configuration</h2>
-
 <p>Exporters should be configured in the YAML configuration file. You can see how to configure the HTTP exporter in the <a href="/installation/configuration/">configuration</a> section of the documentation</p>
-
 <h2 id="payload-format">Payload format</h2>
-
 <p>Here is an example payload sent (using HTTP POST) by the HTTP exporter for a successful DNS healthcheck:</p>
-
-<pre><code class="language-json">[
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">[
   {
-    &quot;name&quot;: &quot;mcorbin-dns-check&quot;,
-    &quot;summary&quot;: &quot;dns healthcheck example on mcorbin.fr&quot;,
-    &quot;labels&quot;: {
-      &quot;environment&quot;: &quot;prod&quot;
+    <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;mcorbin-dns-check&#34;</span>,
+    <span style="color:#f92672">&#34;summary&#34;</span>: <span style="color:#e6db74">&#34;dns healthcheck example on mcorbin.fr&#34;</span>,
+    <span style="color:#f92672">&#34;labels&#34;</span>: {
+      <span style="color:#f92672">&#34;environment&#34;</span>: <span style="color:#e6db74">&#34;prod&#34;</span>
     },
-    &quot;success&quot;: true,
-    &quot;healthcheck-timestamp&quot;: 1610744658,
-    &quot;message&quot;: &quot;success&quot;
+    <span style="color:#f92672">&#34;success&#34;</span>: <span style="color:#66d9ef">true</span>,
+    <span style="color:#f92672">&#34;healthcheck-timestamp&#34;</span>: <span style="color:#ae81ff">1610744658</span>,
+    <span style="color:#f92672">&#34;message&#34;</span>: <span style="color:#e6db74">&#34;success&#34;</span>
   }
 ]
-</code></pre>
-
-<ul>
+</code></pre></div><ul>
 <li><code>name</code> is the healthcheck name.</li>
 <li><code>summary</code> is a small string with some information about the healthcheck.</li>
 <li><code>success</code> indicates if the healthcheck was successful or not.</li>
 <li><code>healthcheck-timestamp</code> is when the healthcheck was executed.</li>
 <li><code>message</code> is a message containing <code>success</code> in case of a successful healthcheck, or an error message in case of a failure.</li>
 </ul>
-
 <p>As you can see, the payload is a list of maps. Cabourotte may batch healthchecks result in the future.</p>
 
 
@@ -920,19 +907,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1610745541"></script>
-    <script src="/js/perfect-scrollbar.min.js?1610745541"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1610745541"></script>
-    <script src="/js/jquery.sticky.js?1610745541"></script>
-    <script src="/js/featherlight.min.js?1610745541"></script>
-    <script src="/js/highlight.pack.js?1610745541"></script>
+    <script src="/js/clipboard.min.js?1614003363"></script>
+    <script src="/js/perfect-scrollbar.min.js?1614003363"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1614003363"></script>
+    <script src="/js/jquery.sticky.js?1614003363"></script>
+    <script src="/js/featherlight.min.js?1614003363"></script>
+    <script src="/js/highlight.pack.js?1614003363"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1610745541"></script>
-    <script src="/js/learn.js?1610745541"></script>
-    <script src="/js/hugo-learn.js?1610745541"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1614003363"></script>
+    <script src="/js/learn.js?1614003363"></script>
+    <script src="/js/hugo-learn.js?1614003363"></script>
 
-    <link href="/mermaid/mermaid.css?1610745541" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1610745541"></script>
+    <link href="/mermaid/mermaid.css?1614003363" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1614003363"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
