@@ -1,0 +1,9 @@
+:7000 {
+  root * /static
+  file_server
+
+  log {
+    level INFO
+    format json
+  }
+}
