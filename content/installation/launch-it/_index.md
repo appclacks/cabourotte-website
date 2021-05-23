@@ -21,12 +21,12 @@ dns-checks:
   - name: "dns-check"
     description: "example"
     domain: "mcorbin.fr"
-    interval: 3s
+    interval: 5s
 EOF
 ```
 
 Then, launch Docker and mount this configuration file on the container:
 
 ```
-docker run -v /tmp/cabourotte.yaml:/cabourotte.yaml mcorbin/cabourotte:v0.9.0
+docker run -p 9013:9013 -v /tmp/cabourotte.yaml:/cabourotte.yaml mcorbin/cabourotte:v0.10.0
 ```
