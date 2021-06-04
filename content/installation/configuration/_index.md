@@ -166,6 +166,24 @@ exporters:
       cert: "/tmp/cert.pem"
       # A key for mTLS (optional)
       key: "/tmp/foo.key"
+  # riemann.io or mirabelle.mcorbin.fr exporter
+  riemann:
+      # The exporter name
+    - name: "mirabelle"
+      # The exporter endpoint
+      host: "89.145.167.133"
+      # The exporter port
+      port: 5555
+      # the TTL for events
+      ttl: "120s"
+      # A cacert for mTLS (optional)
+      cacert: "/tmp/cacert.pem"
+      # A cert for mTLS (optional)
+      cert: "/tmp/cert.pem"
+      # A key for mTLS (optional)
+      key: "/tmp/foo.key"
+      # Enable or disable insecure TLS connections (default to false)
+      insecure: false
 ```
 
 healthchecks names should be unique (you cannot have 2 healthchecks configured with the same name). Same for exporters.
