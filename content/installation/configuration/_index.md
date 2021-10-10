@@ -28,6 +28,10 @@ http:
   basic-auth:
     username: "my-username"
     password: "my-password"
+  # Disable the healthcheck API (all the /healthcheck path), default false
+  disable-healthcheck-api: false
+  # Disable the result API (all the /result path and /frontend), default false
+  disable-result-api: false
 # The dns-checks section can be used to configure DNS healthchecks
 dns-checks:
     # The healthcheck name
