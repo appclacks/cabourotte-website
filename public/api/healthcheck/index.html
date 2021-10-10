@@ -12,21 +12,21 @@
     <title>Healthcheck :: Cabourotte verifies if your infrastructure is healthy</title>
 
     
-    <link href="/css/nucleus.css?1622804345" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1622804345" rel="stylesheet">
-    <link href="/css/hybrid.css?1622804345" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1622804345" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1622804345" rel="stylesheet">
-    <link href="/css/auto-complete.css?1622804345" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1622804345" rel="stylesheet">
-    <link href="/css/theme.css?1622804345" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1622804345" rel="stylesheet">
+    <link href="/css/nucleus.css?1633869813" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1633869813" rel="stylesheet">
+    <link href="/css/hybrid.css?1633869813" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1633869813" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1633869813" rel="stylesheet">
+    <link href="/css/auto-complete.css?1633869813" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1633869813" rel="stylesheet">
+    <link href="/css/theme.css?1633869813" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1633869813" rel="stylesheet">
     
-    <link href="/css/theme-blue.css?1622804345" rel="stylesheet">
+    <link href="/css/theme-blue.css?1633869813" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1622804345"></script>
+    <script src="/js/jquery-3.3.1.min.js?1633869813"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -59,14 +59,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1622804345"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1622804345"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1633869813"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1633869813"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/cabourotte.mcorbin.fr";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1622804345"></script>
+<script type="text/javascript" src="/js/search.js?1633869813"></script>
 
     
   </div>
@@ -564,6 +564,7 @@
         <li><a href="#create-a-tcp-healthcheck">Create a TCP healthcheck</a></li>
         <li><a href="#create-a-dns-healthcheck">Create a DNS Healthcheck</a></li>
         <li><a href="#create-a-tls-healthcheck">Create a TLS Healthcheck</a></li>
+        <li><a href="#create-a-command-healthcheck">Create a command Healthcheck</a></li>
         <li><a href="#create-several-healthchecks-bulk">Create several healthchecks (bulk)</a></li>
         <li><a href="#create-a-one-off-healthcheck">Create a One-Off healthcheck</a></li>
         <li><a href="#delete-a-healthcheck">Delete a healthcheck</a></li>
@@ -634,6 +635,14 @@
 <pre><code>curl -H &quot;Content-Type: application/json&quot; 127.0.0.1:9013/healthcheck/tls -d '{&quot;name&quot;:&quot;mcorbin-tls-check&quot;,&quot;description&quot;:&quot;tls healthcheck example&quot;,&quot;target&quot;:&quot;mcorbin.fr&quot;,&quot;interval&quot;:&quot;5s&quot;,&quot;timeout&quot;: &quot;3s&quot;,&quot;port&quot;:443, &quot;expiration-delay&quot;: &quot;48h&quot;}'
 
 {&quot;message&quot;:&quot;Healthcheck successfully added&quot;}
+</code></pre><h3 id="create-a-command-healthcheck">Create a command Healthcheck</h3>
+<ul>
+<li><strong>POST</strong> /healthcheck/command</li>
+</ul>
+<hr>
+<pre><code>curl -H &quot;Content-Type: application/json&quot; 127.0.0.1:9013/healthcheck/command -d '{&quot;name&quot;:&quot;mcorbin-command-check&quot;,&quot;description&quot;:&quot;command healthcheck example&quot;,&quot;command&quot;:&quot;ls&quot;, &quot;arguments&quot;: [&quot;-l&quot;, &quot;/&quot;], &quot;interval&quot;:&quot;5s&quot;,&quot;timeout&quot;: &quot;3s&quot;}'
+
+{&quot;message&quot;:&quot;Healthcheck successfully added&quot;}
 </code></pre><h3 id="create-several-healthchecks-bulk">Create several healthchecks (bulk)</h3>
 <p>This endpoint can be used to create several healthchecks at once. When this endpoint is used, Cabourotte will:</p>
 <p>Add (or update if it already exists) all healthchecks passed as parameter</p>
@@ -662,6 +671,9 @@
     &quot;...&quot;
   ],
   &quot;dns-checks&quot;: [
+    &quot;...&quot;
+  ],
+  &quot;command-checks&quot;: [
     &quot;...&quot;
   ]
 }
@@ -1028,19 +1040,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1622804345"></script>
-    <script src="/js/perfect-scrollbar.min.js?1622804345"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1622804345"></script>
-    <script src="/js/jquery.sticky.js?1622804345"></script>
-    <script src="/js/featherlight.min.js?1622804345"></script>
-    <script src="/js/highlight.pack.js?1622804345"></script>
+    <script src="/js/clipboard.min.js?1633869813"></script>
+    <script src="/js/perfect-scrollbar.min.js?1633869813"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1633869813"></script>
+    <script src="/js/jquery.sticky.js?1633869813"></script>
+    <script src="/js/featherlight.min.js?1633869813"></script>
+    <script src="/js/highlight.pack.js?1633869813"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1622804345"></script>
-    <script src="/js/learn.js?1622804345"></script>
-    <script src="/js/hugo-learn.js?1622804345"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1633869813"></script>
+    <script src="/js/learn.js?1633869813"></script>
+    <script src="/js/hugo-learn.js?1633869813"></script>
 
-    <link href="/mermaid/mermaid.css?1622804345" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1622804345"></script>
+    <link href="/mermaid/mermaid.css?1633869813" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1633869813"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

@@ -24,6 +24,10 @@ http:
   cert: "/tmp/cert.pem"
   # A key for mTLS (optional)
   key: "/tmp/foo.key"
+  # Basic auth for the HTTP server (optional)
+  basic-auth:
+    username: "my-username"
+    password: "my-password"
 # The dns-checks section can be used to configure DNS healthchecks
 dns-checks:
     # The healthcheck name
@@ -65,6 +69,8 @@ http-checks:
     timeout: 5s
     # The healthcheck interval
     interval: 10s
+    # The HTTP method to use (optional, default GET. Possible values are POST, PUT, GET, HEAD)
+    method: "GET"
     # Follow redirect (optional, default false)
     redirect: true
     # Extra headers to add to the request (optional)
@@ -142,6 +148,28 @@ tls-checks:
     cert: "/tmp/cert.pem"
     # A key for mTLS (optional)
     key: "/tmp/foo.key"
+    # Labels for this healthcheck. It will be used in logging and in
+    # exporters (optional)
+    labels:
+      environment: prod
+# the command-checks section can be used to configure commands on the machine
+# hosting Cabourotte. The healthcheck will fail if the command status code is
+# not zero
+command-checks:
+    # The healthcheck name
+  - name: "mcorbin-command healthcheck"
+    # The healthcheck description
+    description: "tcp healthcheck example"
+    # The healthcheck timeout
+    timeout: 2s
+    # The healthcheck interval
+    interval: 10s
+    # The command to execute
+    command: "ls"
+    # Arguments to pass to the command (optional)
+    arguments:
+      - "-l"
+      - "/tmp"
     # Labels for this healthcheck. It will be used in logging and in
     # exporters (optional)
     labels:

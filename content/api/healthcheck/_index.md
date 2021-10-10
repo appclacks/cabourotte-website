@@ -63,6 +63,18 @@ curl -H "Content-Type: application/json" 127.0.0.1:9013/healthcheck/tls -d '{"na
 {"message":"Healthcheck successfully added"}
 ```
 
+### Create a command Healthcheck
+
+- **POST** /healthcheck/command
+
+---
+
+```
+curl -H "Content-Type: application/json" 127.0.0.1:9013/healthcheck/command -d '{"name":"mcorbin-command-check","description":"command healthcheck example","command":"ls", "arguments": ["-l", "/"], "interval":"5s","timeout": "3s"}'
+
+{"message":"Healthcheck successfully added"}
+```
+
 ### Create several healthchecks (bulk)
 
 This endpoint can be used to create several healthchecks at once. When this endpoint is used, Cabourotte will:
@@ -96,6 +108,9 @@ curl -H "Content-Type: application/json" 127.0.0.1:9013/healthcheck/bulk -d '
     "..."
   ],
   "dns-checks": [
+    "..."
+  ],
+  "command-checks": [
     "..."
   ]
 }
