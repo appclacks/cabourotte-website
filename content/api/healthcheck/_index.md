@@ -77,11 +77,7 @@ curl -H "Content-Type: application/json" 127.0.0.1:9013/healthcheck/command -d '
 
 ### Create several healthchecks (bulk)
 
-This endpoint can be used to create several healthchecks at once. When this endpoint is used, Cabourotte will:
-
-Add (or update if it already exists) all healthchecks passed as parameter
-
-Stop all healthchecks not managed by the configuration file and not passed as parameter. This point is important, you cannot use this API call to create or update only a subset of your healthchecks.
+This endpoint can be used to create several healthchecks at once.
 
 - **POST** /healthcheck/bulk
 
