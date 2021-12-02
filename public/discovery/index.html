@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Frontend :: Cabourotte verifies if your infrastructure is healthy</title>
+    <title>Service Discovery :: Cabourotte verifies if your infrastructure is healthy</title>
 
     
     <link href="/css/nucleus.css?1638813289" rel="stylesheet">
@@ -41,7 +41,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/installation/frontend/">
+  <body class="" data-url="/discovery/">
     <nav id="sidebar" class="">
 
 
@@ -95,7 +95,7 @@
   
     
     <li data-nav-id="/installation/" title="Installation" class="dd-item
-        parent
+        
         
         
         ">
@@ -228,8 +228,8 @@
   
     
     <li data-nav-id="/installation/frontend/" title="Frontend" class="dd-item
-        parent
-        active
+        
+        
         
         ">
       <a href="/installation/frontend/">
@@ -261,8 +261,8 @@
   
     
     <li data-nav-id="/discovery/" title="Service Discovery" class="dd-item
-        
-        
+        parent
+        active
         
         ">
       <a href="/discovery/">
@@ -625,8 +625,6 @@
                         </a>
                     </span>
                   
-                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
-                  
                   <span class="links">
                  
                  
@@ -637,13 +635,7 @@
             
           
           
-            
-            
-          
-          
-            <a href='/'></a> > <a href='/installation/'>Installation</a> > Frontend
-          
-        
+            <a href='/'></a> > Service Discovery
           
         
           
@@ -652,17 +644,6 @@
                   </span>
                 </div>
                 
-                    <div class="progress">
-    <div class="wrapper">
-<nav id="TableOfContents">
-  <ul>
-    <li><a href="#the-cabourotte-frontend">The Cabourotte Frontend</a></li>
-  </ul>
-</nav>
-    </div>
-</div>
-
-                
               </div>
             </div>
             
@@ -670,22 +651,18 @@
         
         </div>
         
+          <div id="chapter">
+        
         <div id="body-inner">
-          
-            <h1>
-              
-              Frontend
-            </h1>
           
 
         
 
 
 
-	<h2 id="the-cabourotte-frontend">The Cabourotte Frontend</h2>
-<p>Cabourotte provides a frontend showing the current healthchecks status. The frontend is available on the <code>/frontend</code> URL.</p>
-<p>I&rsquo;m not a frontend developer so help is welcome to improve the interface.</p>
-<p><img src="/img/frontend.jpg" alt="Frontend"></p>
+	<h1 id="service-discovery">Service discovery</h1>
+<hr>
+<p>Cabourotte is able to listen to external systems in order to configure itself. Currently, only Kubernetes is supported as a discovery source but more will come.</p>
 
 
 
@@ -695,6 +672,8 @@
 	
 </footer>
 
+        
+            </div> 
         
         </div>
         
@@ -726,6 +705,8 @@
             
                 
                     
+                        
+                        
                     
                 
                 
@@ -741,9 +722,6 @@
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -809,7 +787,6 @@
             
                 
                     
-                    
                 
                 
 
@@ -829,8 +806,6 @@
             
                 
                     
-                        
-                        
                     
                 
                 
@@ -846,6 +821,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1020,10 +998,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/installation/monitoring/" title="Monitoring"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/installation/frontend/" title="Frontend"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/discovery/" title="Service Discovery" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/discovery/kubernetes/" title="Kubernetes" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

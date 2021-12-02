@@ -8,6 +8,8 @@ disableToc: false
 
 You can launch the daemon with the command `cabourotte daemon --config <path_to_yaml_config>`.
 
+You can also pass a `--debug` flag to enable debug login.
+
 ## With Docker
 
 You should first create a [configuration file](/installation/configuration/), for example:
@@ -28,5 +30,5 @@ EOF
 Then, launch Docker and mount this configuration file on the container:
 
 ```
-docker run -p 9013:9013 -v /tmp/cabourotte.yaml:/cabourotte.yaml mcorbin/cabourotte:v0.12.0
+docker run -p 9013:9013 -v /tmp/cabourotte.yaml:/cabourotte.yaml mcorbin/cabourotte:v0.16.0
 ```

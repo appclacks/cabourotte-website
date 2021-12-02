@@ -3,6 +3,10 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://cabourotte.mcorbin.fr/discovery/kubernetes/</loc>
+  </url>
+  
+  <url>
     <loc>https://cabourotte.mcorbin.fr/api/healthcheck/</loc>
   </url>
   
@@ -19,14 +23,6 @@
   </url>
   
   <url>
-    <loc>https://cabourotte.mcorbin.fr/api/</loc>
-  </url>
-  
-  <url>
-    <loc>https://cabourotte.mcorbin.fr/exporters/</loc>
-  </url>
-  
-  <url>
     <loc>https://cabourotte.mcorbin.fr/community/support/</loc>
   </url>
   
@@ -39,7 +35,15 @@
   </url>
   
   <url>
+    <loc>https://cabourotte.mcorbin.fr/discovery/</loc>
+  </url>
+  
+  <url>
     <loc>https://cabourotte.mcorbin.fr/installation/configuration/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cabourotte.mcorbin.fr/exporters/</loc>
   </url>
   
   <url>
@@ -47,7 +51,15 @@
   </url>
   
   <url>
+    <loc>https://cabourotte.mcorbin.fr/exporters/riemann/</loc>
+  </url>
+  
+  <url>
     <loc>https://cabourotte.mcorbin.fr/installation/monitoring/</loc>
+  </url>
+  
+  <url>
+    <loc>https://cabourotte.mcorbin.fr/api/</loc>
   </url>
   
   <url>

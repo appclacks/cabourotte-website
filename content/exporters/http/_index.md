@@ -24,7 +24,8 @@ Here is an example payload sent (using HTTP POST) by the HTTP exporter for a suc
     },
     "success": true,
     "healthcheck-timestamp": 1610744658,
-    "message": "success"
+    "message": "success",
+    "source": "configuration"
   }
 ]
 ```
@@ -34,5 +35,6 @@ Here is an example payload sent (using HTTP POST) by the HTTP exporter for a suc
 - `success` indicates if the healthcheck was successful or not.
 - `healthcheck-timestamp` is when the healthcheck was executed.
 - `message` is a message containing `success` in case of a successful healthcheck, or an error message in case of a failure.
+- `source` is the component which created the healthcheck (api, configuration...).
 
 As you can see, the payload is a list of maps. Cabourotte may batch healthchecks result in the future.
