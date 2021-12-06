@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Frontend :: Cabourotte verifies if your infrastructure is healthy</title>
+    <title>Kubernetes :: Cabourotte verifies if your infrastructure is healthy</title>
 
     
     <link href="/css/nucleus.css?1638813289" rel="stylesheet">
@@ -41,7 +41,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/installation/frontend/">
+  <body class="" data-url="/discovery/kubernetes/">
     <nav id="sidebar" class="">
 
 
@@ -95,7 +95,7 @@
   
     
     <li data-nav-id="/installation/" title="Installation" class="dd-item
-        parent
+        
         
         
         ">
@@ -228,8 +228,8 @@
   
     
     <li data-nav-id="/installation/frontend/" title="Frontend" class="dd-item
-        parent
-        active
+        
+        
         
         ">
       <a href="/installation/frontend/">
@@ -261,7 +261,7 @@
   
     
     <li data-nav-id="/discovery/" title="Service Discovery" class="dd-item
-        
+        parent
         
         
         ">
@@ -290,8 +290,8 @@
   
     
     <li data-nav-id="/discovery/kubernetes/" title="Kubernetes" class="dd-item
-        
-        
+        parent
+        active
         
         ">
       <a href="/discovery/kubernetes/">
@@ -641,7 +641,7 @@
             
           
           
-            <a href='/'></a> > <a href='/installation/'>Installation</a> > Frontend
+            <a href='/'></a> > <a href='/discovery/'>Service Discovery</a> > Kubernetes
           
         
           
@@ -656,7 +656,9 @@
     <div class="wrapper">
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#the-cabourotte-frontend">The Cabourotte Frontend</a></li>
+    <li><a href="#cluster-access">Cluster access</a></li>
+    <li><a href="#pods-and-services">Pods and services</a></li>
+    <li><a href="#crd">CRD</a></li>
   </ul>
 </nav>
     </div>
@@ -674,7 +676,7 @@
           
             <h1>
               
-              Frontend
+              Kubernetes
             </h1>
           
 
@@ -682,10 +684,67 @@
 
 
 
-	<h2 id="the-cabourotte-frontend">The Cabourotte Frontend</h2>
-<p>Cabourotte provides a frontend showing the current healthchecks status. The frontend is available on the <code>/frontend</code> URL.</p>
-<p>I&rsquo;m not a frontend developer so help is welcome to improve the interface.</p>
-<p><img src="/img/frontend.jpg" alt="Frontend"></p>
+	<p>The Kubernetes service discovery mechanisms allows Cabourotte to automatically configure itself based on Kubernetes pods and services annotations.</p>
+<p>Cabourotte also listens for a Custom Resource Definition (CRD) to configure healthcheck using Kubernetes resources.</p>
+<p>The <a href="/installation/configuration/">configuration</a> section shows how to enable Kubernetes service discovery in the configuration file.</p>
+<p>Cabourotte should be allowed to listen to pods, services, and the Cabourotte Healthcheck CRD in order to make the service discovery mechanism to work.</p>
+<p>You can for example apply in your cluster this <a href="https://github.com/mcorbin/cabourotte/blob/master/doc/kubernetes/cabourotte_rbac.yaml">manifest</a> in order to have a Kubernetes <code>ClusterRole</code> created with the right permissions and associated to a <code>ServiceAccount</code> in the namespace <code>default</code>.</p>
+<p>This <a href="https://github.com/mcorbin/cabourotte/blob/master/doc/kubernetes/cabourotte_deployment.yaml">manifest</a> shows you to deploy Cabourotte using a Kubernetes <code>Deployment</code>.</p>
+<p>You will also have to create the Kubernetes <code>Custom Resource Definition</code> using <a href="https://github.com/mcorbin/cabourotte/blob/master/doc/kubernetes/healthcheck_crd.yaml">this manifest</a>.</p>
+<p>You can use multiple instances of Cabourotte in parallel, each watching one or multiple resources (which can be filtered using labels) to configure themselves.</p>
+<h2 id="cluster-access">Cluster access</h2>
+<p>Cabourotte needs to access the Kubernetes API server. There are several ways to configure the access, which are tried in this order:</p>
+<ul>
+<li>A KUBECONFIG environment variable pointing to a kubeconfig file.</li>
+<li>If you are running Cabourotte inside kubernetes, Cabourotte automatically use the pod service account.</li>
+<li>use the kubeconfig at <code>$HOME/.kube/config</code>.</li>
+</ul>
+<h2 id="pods-and-services">Pods and services</h2>
+<p>Cabourotte can listen to pods and services to configure healthchecks. The configuration file allows you to restrict which pods and services should be listened based on their labels or namespaces.</p>
+<p>Annotations are used to configure healthchecks.</p>
+<p><strong>Pods</strong></p>
+<p>The <code>cabourotte.mcorbin.fr/healthcheck-type</code> and <code>cabourotte.mcorbin.fr/healthcheck-configuration</code> annotations are required to configure healthchecks.</p>
+<p>The first one indicates the healthcheck type (<code>http</code>, <code>tcp</code>, <code>dns</code>, <code>tls</code>, <code>command</code>) and the second one contains the healthcheck configuration in YAML format. The format is the same that the one described in the <a href="/installation/configuration/">configuration</a> file.</p>
+<p>Here is an example:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">v1</span>
+<span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Pod</span>
+<span style="color:#f92672">metadata</span>:
+  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">test-http-check</span>
+  <span style="color:#f92672">annotations</span>:
+    <span style="color:#f92672">cabourotte.mcorbin.fr/healthcheck-type</span>: <span style="color:#e6db74">&#34;http&#34;</span>
+    <span style="color:#f92672">cabourotte.mcorbin.fr/healthcheck-configuration</span>: |<span style="color:#e6db74">
+</span><span style="color:#e6db74">      name: &#34;foo&#34;
+</span><span style="color:#e6db74">      description: &#34;bar&#34;
+</span><span style="color:#e6db74">      interval: &#34;5s&#34;
+</span><span style="color:#e6db74">      timeout: &#34;3s&#34;
+</span><span style="color:#e6db74">      port: 443
+</span><span style="color:#e6db74">      protocol: &#34;https&#34;
+</span><span style="color:#e6db74">      valid-status: [200]</span>      
+</code></pre></div><p>These annotations will configure for this pod an healthcheck of type <code>http</code>.</p>
+<p>The healthcheck <code>target</code> is not defined in the configuration. You can define it but by default the target will be the Kubernetes pod IP address (the IP set in <code>Status.PodIP</code> in the pod spec).</p>
+<p><strong>Service</strong></p>
+<p>The annotations are the same than the pods one. <code>cabourotte.mcorbin.fr/healthcheck-type</code> should be used to configure the healthcheck type, and <code>cabourotte.mcorbin.fr/healthcheck-configuration</code> for the healthcheck configuration.</p>
+<p>By default, the healthcheck target will be the service DNS (<code>&lt;service-name&gt;.&lt;namespace&gt;.svc</code>). You can also target the service Cluster IP (<code>Spec.ClusterIP</code> in the service spec) by adding a new annotation to your service: <code>cabourotte.mcorbin.fr/target: &quot;ip&quot;</code>.</p>
+<h2 id="crd">CRD</h2>
+<p>You can also configure Cabourotte healthchecks using a Kubernetes Custom Resource Definition. Like Pods and Services, you can configure which namespace to watch (default to all) and only listen to resources with specific labels.</p>
+<p>You can find a resource example <a href="https://github.com/mcorbin/cabourotte/blob/master/doc/kubernetes/healthcheck_example.yaml">here</a>. The format is simple: it&rsquo;s the same than the <a href="/installation/configuration/">configuration</a> one for healhchecks.</p>
+<p>For example:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">cabourotte.mcorbin.fr/v1</span>
+<span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Healthcheck</span>
+<span style="color:#f92672">metadata</span>:
+  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">healthcheck-sample</span>
+  <span style="color:#f92672">namespace</span>: <span style="color:#ae81ff">default</span>
+  <span style="color:#f92672">labels</span>:
+    <span style="color:#f92672">foo</span>: <span style="color:#e6db74">&#34;bar&#34;</span>
+<span style="color:#f92672">spec</span>:
+  <span style="color:#f92672">dns-checks</span>:
+    - <span style="color:#f92672">name</span>: <span style="color:#e6db74">&#34;mcorbin-dns-check&#34;</span>
+      <span style="color:#f92672">description</span>: <span style="color:#e6db74">&#34;dns healthcheck example&#34;</span>
+      <span style="color:#f92672">domain</span>: <span style="color:#e6db74">&#34;mcorbin.fr&#34;</span>
+      <span style="color:#f92672">interval</span>: <span style="color:#e6db74">&#34;5s&#34;</span>
+      <span style="color:#f92672">labels</span>:
+        <span style="color:#f92672">environment</span>: <span style="color:#ae81ff">prod</span>
+</code></pre></div><p>This resource will configure Cabourotte with an healthcheck of type <code>dns</code>.</p>
 
 
 
@@ -726,6 +785,8 @@
             
                 
                     
+                        
+                        
                     
                 
                 
@@ -742,8 +803,21 @@
             
                 
                     
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
                         
-                        
+            
+            
+                
                     
                 
                 
@@ -804,6 +878,25 @@
             
         
                     
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
                         
             
             
@@ -831,40 +924,6 @@
                     
                         
                         
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
                     
                 
                 
@@ -1020,10 +1079,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/installation/monitoring/" title="Monitoring"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/discovery/" title="Service Discovery"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/discovery/" title="Service Discovery" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/exporters/" title="Exporters" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

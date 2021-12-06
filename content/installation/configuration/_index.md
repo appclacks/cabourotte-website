@@ -73,7 +73,7 @@ http-checks:
     timeout: 5s
     # The healthcheck interval
     interval: 10s
-    # The HTTP method to use (optional, default GET. Possible values are POST, PUT, GET, HEAD)
+    # The HTTP method to use (optional, default GET. Possible values are POST, PUT, GET, HEAD, DELETE)
     method: "GET"
     # Follow redirect (optional, default false)
     redirect: true
@@ -216,6 +216,42 @@ exporters:
       key: "/tmp/foo.key"
       # Enable or disable insecure TLS connections (default to false)
       insecure: false
+# Enable service discovery sur healthchecks (optional)
+# For more information about service discovery and how to use it,
+# please check the dedicated section in the documentation
+discovery:
+  # Enabled Kubernetes service discovery (optional)
+  kubernetes:
+      # Enable Kubernetes pod discovery
+      pod:
+        # Only pods with these labels will be discovered (optional)
+        labels:
+          foo: "bar"
+        # Enable Kubernetes pod discovery
+        enabled: true
+        # Only discover pods in this namespace (optional)
+        namespace: "default"
+      # Enable Kubernetes service discovery
+      service:
+        # Only services with these labels will be discovered (optional)
+        labels:
+          foo: "bar"
+        # Enable Kubernetes service discovery
+        enabled: true
+        # Only discover services in this namespace (optional)
+        namespace: "default"
+      # Enable Kubernetes Healthcheck CRD discovery
+      crd:
+        # Only CRD with these labels will be discovered (optional)
+        labels:
+          foo: "bar"
+        # Enable Kubernetes CRD discovery
+        enabled: true
+        # Only discover CRD in this namespace (optional)
+        namespace: "default"
+      # Disable commands checks. Trying to create commands checks using
+      # Kubernetes will fail
+      disable-commands-checks: true
 ```
 
 healthchecks names should be unique (you cannot have 2 healthchecks configured with the same name). Same for exporters.

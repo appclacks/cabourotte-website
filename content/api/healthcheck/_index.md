@@ -79,6 +79,8 @@ curl -H "Content-Type: application/json" 127.0.0.1:9013/healthcheck/command -d '
 
 This endpoint can be used to create several healthchecks at once.
 
+Existing healthchecks created using the API will be replaced or removed if not specified in the request payload. You can use this endpoint to be sure about which healthcheck was configured through the API.
+
 - **POST** /healthcheck/bulk
 
 ---

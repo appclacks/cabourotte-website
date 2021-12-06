@@ -31,6 +31,10 @@ Here are some interesting metrics exposed:
 
 Metrics prefixed by `go` are golang internal metrics.
 
+## Kubernetes metrics
+
+If you enable the [Kubernetes](discovery/kubernetes/) service discovery module, the metrics of the Kubernetes controllers will be available on `/discovery/kubernetes/metrics`.
+
 ## Health endpoints
 
 Cabourotte provides the `/health` and `/healthz` endpoints. You can use them to check if Cabourotte is started or not.
