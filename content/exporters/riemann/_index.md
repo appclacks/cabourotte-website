@@ -22,3 +22,5 @@ The event will have several fields set:
 - tags: The event will be tagged "cabourotte"
 - ttl: The TTL configured in the configuration.
 - healthcheck: The healthcheck name
+
+The healthchecks labels will also be set in the event.
