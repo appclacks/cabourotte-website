@@ -1,86 +1,48 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
-  <url>
-    <loc>https://cabourotte.mcorbin.fr/discovery/kubernetes/</loc>
-  </url>
-  
   <url>
     <loc>https://cabourotte.mcorbin.fr/api/healthcheck/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://cabourotte.mcorbin.fr/community/how-to-contribute/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://cabourotte.mcorbin.fr/installation/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://cabourotte.mcorbin.fr/api/result/</loc>
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>https://cabourotte.mcorbin.fr/discovery/http/</loc>
+  </url><url>
+    <loc>https://cabourotte.mcorbin.fr/discovery/kubernetes/</loc>
+  </url><url>
     <loc>https://cabourotte.mcorbin.fr/community/support/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://cabourotte.mcorbin.fr/installation/get-cabourotte/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://cabourotte.mcorbin.fr/exporters/http/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://cabourotte.mcorbin.fr/discovery/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://cabourotte.mcorbin.fr/installation/configuration/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://cabourotte.mcorbin.fr/exporters/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://cabourotte.mcorbin.fr/installation/launch-it/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://cabourotte.mcorbin.fr/exporters/riemann/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://cabourotte.mcorbin.fr/installation/monitoring/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://cabourotte.mcorbin.fr/api/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://cabourotte.mcorbin.fr/installation/frontend/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://cabourotte.mcorbin.fr/community/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://cabourotte.mcorbin.fr/</loc>
     <priority>0</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://cabourotte.mcorbin.fr/categories/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://cabourotte.mcorbin.fr/tags/</loc>
   </url>
-  
 </urlset>

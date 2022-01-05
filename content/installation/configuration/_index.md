@@ -198,6 +198,8 @@ exporters:
       cert: "/tmp/cert.pem"
       # A key for mTLS (optional)
       key: "/tmp/foo.key"
+      # Enable or disable insecure TLS connections (default to false)
+      insecure: false
   # riemann.io or mirabelle.mcorbin.fr exporter
   riemann:
       # The exporter name
@@ -252,6 +254,26 @@ discovery:
       # Disable commands checks. Trying to create commands checks using
       # Kubernetes will fail
       disable-commands-checks: true
+  # Enable HTTP discovery
+    http:
+      # The interval between the polls (minimum 10s)
+      interval: 10s
+      # The target host
+      host: "127.0.0.1"
+      # The target port
+      port: 9595
+      # The target path
+      path: "/"
+      # The target protocol (http or https)
+      protocol: "http"
+      # A cacert for mTLS (optional)
+      cacert: "/tmp/cacert.pem"
+      # A cert for mTLS (optional)
+      cert: "/tmp/cert.pem"
+      # A key for mTLS (optional)
+      key: "/tmp/foo.key"
+      # Enable or disable insecure TLS connections (default to false)
+      insecure: false
 ```
 
 healthchecks names should be unique (you cannot have 2 healthchecks configured with the same name). Same for exporters.

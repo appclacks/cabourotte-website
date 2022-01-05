@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.80.0" />
+    <meta name="generator" content="Hugo 0.91.2" />
     <meta name="description" content="">
 
 
@@ -12,22 +12,22 @@
     <title>Kubernetes :: Cabourotte verifies if your infrastructure is healthy</title>
 
     
-    <link href="/css/nucleus.css?1639262182" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1639262182" rel="stylesheet">
-    <link href="/css/hybrid.css?1639262182" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1639262182" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1639262182" rel="stylesheet">
-    <link href="/css/auto-complete.css?1639262182" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1639262182" rel="stylesheet">
-    <link href="/css/theme.css?1639262182" rel="stylesheet">
-    <link href="/css/tabs.css?1639262182" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1639262182" rel="stylesheet">
+    <link href="/css/nucleus.css?1641413794" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1641413794" rel="stylesheet">
+    <link href="/css/hybrid.css?1641413794" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1641413794" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1641413794" rel="stylesheet">
+    <link href="/css/auto-complete.css?1641413794" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1641413794" rel="stylesheet">
+    <link href="/css/theme.css?1641413794" rel="stylesheet">
+    <link href="/css/tabs.css?1641413794" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1641413794" rel="stylesheet">
     
-    <link href="/css/theme-blue.css?1639262182" rel="stylesheet">
+    <link href="/css/theme-blue.css?1641413794" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1639262182"></script>
+    <script src="/js/jquery-3.3.1.min.js?1641413794"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -60,14 +60,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1639262182"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1639262182"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1641413794"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1641413794"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/cabourotte.mcorbin.fr";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1639262182"></script>
+<script type="text/javascript" src="/js/search.js?1641413794"></script>
 
     
   </div>
@@ -279,6 +279,32 @@
           
 
         
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/discovery/http/" title="HTTP" class="dd-item
+        
+        
+        
+        ">
+      <a href="/discovery/http/">
+          HTTP
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
           
             
             
@@ -706,7 +732,7 @@
 <p>The <code>cabourotte.mcorbin.fr/healthcheck-type</code> and <code>cabourotte.mcorbin.fr/healthcheck-configuration</code> annotations are required to configure healthchecks.</p>
 <p>The first one indicates the healthcheck type (<code>http</code>, <code>tcp</code>, <code>dns</code>, <code>tls</code>, <code>command</code>) and the second one contains the healthcheck configuration in YAML format. The format is the same that the one described in the <a href="/installation/configuration/">configuration</a> file.</p>
 <p>Here is an example:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">v1</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">v1</span>
 <span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Pod</span>
 <span style="color:#f92672">metadata</span>:
   <span style="color:#f92672">name</span>: <span style="color:#ae81ff">test-http-check</span>
@@ -729,7 +755,7 @@
 <p>You can also configure Cabourotte healthchecks using a Kubernetes Custom Resource Definition. Like Pods and Services, you can configure which namespace to watch (default to all) and only listen to resources with specific labels.</p>
 <p>You can find a resource example <a href="https://github.com/mcorbin/cabourotte/blob/master/doc/kubernetes/healthcheck_example.yaml">here</a>. The format is simple: it&rsquo;s the same than the <a href="/installation/configuration/">configuration</a> one for healhchecks.</p>
 <p>For example:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">cabourotte.mcorbin.fr/v1</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">cabourotte.mcorbin.fr/v1</span>
 <span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Healthcheck</span>
 <span style="color:#f92672">metadata</span>:
   <span style="color:#f92672">name</span>: <span style="color:#ae81ff">healthcheck-sample</span>
@@ -902,6 +928,25 @@
             
                 
                     
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
                     
                 
                 
@@ -1079,7 +1124,7 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/discovery/" title="Service Discovery"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/discovery/http/" title="HTTP"> <i class="fa fa-chevron-left"></i></a>
 		
 		
 			<a class="nav nav-next" href="/exporters/" title="Exporters" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
@@ -1092,19 +1137,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1639262182"></script>
-    <script src="/js/perfect-scrollbar.min.js?1639262182"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1639262182"></script>
-    <script src="/js/jquery.sticky.js?1639262182"></script>
-    <script src="/js/featherlight.min.js?1639262182"></script>
-    <script src="/js/highlight.pack.js?1639262182"></script>
+    <script src="/js/clipboard.min.js?1641413794"></script>
+    <script src="/js/perfect-scrollbar.min.js?1641413794"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1641413794"></script>
+    <script src="/js/jquery.sticky.js?1641413794"></script>
+    <script src="/js/featherlight.min.js?1641413794"></script>
+    <script src="/js/highlight.pack.js?1641413794"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1639262182"></script>
-    <script src="/js/learn.js?1639262182"></script>
-    <script src="/js/hugo-learn.js?1639262182"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1641413794"></script>
+    <script src="/js/learn.js?1641413794"></script>
+    <script src="/js/hugo-learn.js?1641413794"></script>
     
         
-            <script src="/mermaid/mermaid.js?1639262182"></script>
+            <script src="/mermaid/mermaid.js?1641413794"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

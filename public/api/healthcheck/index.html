@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.80.0" />
+    <meta name="generator" content="Hugo 0.91.2" />
     <meta name="description" content="">
 
 
@@ -12,22 +12,22 @@
     <title>Healthcheck :: Cabourotte verifies if your infrastructure is healthy</title>
 
     
-    <link href="/css/nucleus.css?1639262182" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1639262182" rel="stylesheet">
-    <link href="/css/hybrid.css?1639262182" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1639262182" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1639262182" rel="stylesheet">
-    <link href="/css/auto-complete.css?1639262182" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1639262182" rel="stylesheet">
-    <link href="/css/theme.css?1639262182" rel="stylesheet">
-    <link href="/css/tabs.css?1639262182" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1639262182" rel="stylesheet">
+    <link href="/css/nucleus.css?1641413794" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1641413794" rel="stylesheet">
+    <link href="/css/hybrid.css?1641413794" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1641413794" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1641413794" rel="stylesheet">
+    <link href="/css/auto-complete.css?1641413794" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1641413794" rel="stylesheet">
+    <link href="/css/theme.css?1641413794" rel="stylesheet">
+    <link href="/css/tabs.css?1641413794" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1641413794" rel="stylesheet">
     
-    <link href="/css/theme-blue.css?1639262182" rel="stylesheet">
+    <link href="/css/theme-blue.css?1641413794" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1639262182"></script>
+    <script src="/js/jquery-3.3.1.min.js?1641413794"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -60,14 +60,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1639262182"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1639262182"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1641413794"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1641413794"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/cabourotte.mcorbin.fr";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1639262182"></script>
+<script type="text/javascript" src="/js/search.js?1641413794"></script>
 
     
   </div>
@@ -279,6 +279,32 @@
           
 
         
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/discovery/http/" title="HTTP" class="dd-item
+        
+        
+        
+        ">
+      <a href="/discovery/http/">
+          HTTP
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
           
             
             
@@ -705,7 +731,7 @@
 <li><strong>POST</strong> /healthcheck/http</li>
 </ul>
 <hr>
-<pre><code>curl -H &quot;Content-Type: application/json&quot; 127.0.0.1:9013/healthcheck/http -d '{&quot;name&quot;:&quot;mcorbin-http-check&quot;,&quot;description&quot;:&quot;http healthcheck example&quot;,&quot;target&quot;:&quot;mcorbin.fr&quot;,&quot;interval&quot;:&quot;5s&quot;,&quot;timeout&quot;: &quot;3s&quot;,&quot;port&quot;:443,&quot;protocol&quot;:&quot;https&quot;,&quot;valid-status&quot;:[200]}'
+<pre tabindex="0"><code>curl -H &quot;Content-Type: application/json&quot; 127.0.0.1:9013/healthcheck/http -d '{&quot;name&quot;:&quot;mcorbin-http-check&quot;,&quot;description&quot;:&quot;http healthcheck example&quot;,&quot;target&quot;:&quot;mcorbin.fr&quot;,&quot;interval&quot;:&quot;5s&quot;,&quot;timeout&quot;: &quot;3s&quot;,&quot;port&quot;:443,&quot;protocol&quot;:&quot;https&quot;,&quot;valid-status&quot;:[200]}'
 
 {&quot;message&quot;:&quot;Healthcheck successfully added&quot;}
 </code></pre><h3 id="create-a-tcp-healthcheck">Create a TCP healthcheck</h3>
@@ -713,7 +739,7 @@
 <li><strong>POST</strong> /healthcheck/tcp</li>
 </ul>
 <hr>
-<pre><code>curl -H &quot;Content-Type: application/json&quot; 127.0.0.1:9013/healthcheck/tcp -d '{&quot;name&quot;:&quot;mcorbin-tcp-check&quot;,&quot;description&quot;:&quot;http healthcheck example&quot;,&quot;target&quot;:&quot;mcorbin.fr&quot;,&quot;interval&quot;:&quot;5s&quot;,&quot;timeout&quot;: &quot;3s&quot;,&quot;port&quot;:443}'
+<pre tabindex="0"><code>curl -H &quot;Content-Type: application/json&quot; 127.0.0.1:9013/healthcheck/tcp -d '{&quot;name&quot;:&quot;mcorbin-tcp-check&quot;,&quot;description&quot;:&quot;http healthcheck example&quot;,&quot;target&quot;:&quot;mcorbin.fr&quot;,&quot;interval&quot;:&quot;5s&quot;,&quot;timeout&quot;: &quot;3s&quot;,&quot;port&quot;:443}'
 
 {&quot;message&quot;:&quot;Healthcheck successfully added&quot;}
 
@@ -722,7 +748,7 @@
 <li><strong>POST</strong> /healthcheck/dns</li>
 </ul>
 <hr>
-<pre><code>curl -H &quot;Content-Type: application/json&quot; 127.0.0.1:9013/healthcheck/dns -d '{&quot;name&quot;:&quot;mcorbin-dns-check&quot;,&quot;description&quot;:&quot;dns healthcheck example&quot;,&quot;domain&quot;:&quot;mcorbin.fr&quot;,&quot;interval&quot;:&quot;5s&quot;}'
+<pre tabindex="0"><code>curl -H &quot;Content-Type: application/json&quot; 127.0.0.1:9013/healthcheck/dns -d '{&quot;name&quot;:&quot;mcorbin-dns-check&quot;,&quot;description&quot;:&quot;dns healthcheck example&quot;,&quot;domain&quot;:&quot;mcorbin.fr&quot;,&quot;interval&quot;:&quot;5s&quot;}'
 
 {&quot;message&quot;:&quot;Healthcheck successfully added&quot;}
 </code></pre><h3 id="create-a-tls-healthcheck">Create a TLS Healthcheck</h3>
@@ -730,7 +756,7 @@
 <li><strong>POST</strong> /healthcheck/tls</li>
 </ul>
 <hr>
-<pre><code>curl -H &quot;Content-Type: application/json&quot; 127.0.0.1:9013/healthcheck/tls -d '{&quot;name&quot;:&quot;mcorbin-tls-check&quot;,&quot;description&quot;:&quot;tls healthcheck example&quot;,&quot;target&quot;:&quot;mcorbin.fr&quot;,&quot;interval&quot;:&quot;5s&quot;,&quot;timeout&quot;: &quot;3s&quot;,&quot;port&quot;:443, &quot;expiration-delay&quot;: &quot;48h&quot;}'
+<pre tabindex="0"><code>curl -H &quot;Content-Type: application/json&quot; 127.0.0.1:9013/healthcheck/tls -d '{&quot;name&quot;:&quot;mcorbin-tls-check&quot;,&quot;description&quot;:&quot;tls healthcheck example&quot;,&quot;target&quot;:&quot;mcorbin.fr&quot;,&quot;interval&quot;:&quot;5s&quot;,&quot;timeout&quot;: &quot;3s&quot;,&quot;port&quot;:443, &quot;expiration-delay&quot;: &quot;48h&quot;}'
 
 {&quot;message&quot;:&quot;Healthcheck successfully added&quot;}
 </code></pre><h3 id="create-a-command-healthcheck">Create a command Healthcheck</h3>
@@ -738,7 +764,7 @@
 <li><strong>POST</strong> /healthcheck/command</li>
 </ul>
 <hr>
-<pre><code>curl -H &quot;Content-Type: application/json&quot; 127.0.0.1:9013/healthcheck/command -d '{&quot;name&quot;:&quot;mcorbin-command-check&quot;,&quot;description&quot;:&quot;command healthcheck example&quot;,&quot;command&quot;:&quot;ls&quot;, &quot;arguments&quot;: [&quot;-l&quot;, &quot;/&quot;], &quot;interval&quot;:&quot;5s&quot;,&quot;timeout&quot;: &quot;3s&quot;}'
+<pre tabindex="0"><code>curl -H &quot;Content-Type: application/json&quot; 127.0.0.1:9013/healthcheck/command -d '{&quot;name&quot;:&quot;mcorbin-command-check&quot;,&quot;description&quot;:&quot;command healthcheck example&quot;,&quot;command&quot;:&quot;ls&quot;, &quot;arguments&quot;: [&quot;-l&quot;, &quot;/&quot;], &quot;interval&quot;:&quot;5s&quot;,&quot;timeout&quot;: &quot;3s&quot;}'
 
 {&quot;message&quot;:&quot;Healthcheck successfully added&quot;}
 </code></pre><h3 id="create-several-healthchecks-bulk">Create several healthchecks (bulk)</h3>
@@ -748,7 +774,7 @@
 <li><strong>POST</strong> /healthcheck/bulk</li>
 </ul>
 <hr>
-<pre><code>curl -H &quot;Content-Type: application/json&quot; 127.0.0.1:9013/healthcheck/bulk -d '
+<pre tabindex="0"><code>curl -H &quot;Content-Type: application/json&quot; 127.0.0.1:9013/healthcheck/bulk -d '
 {
   &quot;tls-checks&quot;: [
     {
@@ -781,11 +807,11 @@
 <p>As explained before, the <code>one-off</code> parameter can be set to <code>true</code> in the payload to create a <code>one-off</code> healthcheck which will be instantly executed.</p>
 <hr>
 <p><strong>Success example</strong>:</p>
-<pre><code>curl -H &quot;Content-Type: application/json&quot; 127.0.0.1:9013/healthcheck/dns -d '{&quot;name&quot;:&quot;mcorbin-dns-check&quot;,&quot;description&quot;:&quot;dns healthcheck example&quot;,&quot;domain&quot;:&quot;mcorbin.fr&quot;,&quot;interval&quot;:&quot;5s&quot;,&quot;one-off&quot;: true}'
+<pre tabindex="0"><code>curl -H &quot;Content-Type: application/json&quot; 127.0.0.1:9013/healthcheck/dns -d '{&quot;name&quot;:&quot;mcorbin-dns-check&quot;,&quot;description&quot;:&quot;dns healthcheck example&quot;,&quot;domain&quot;:&quot;mcorbin.fr&quot;,&quot;interval&quot;:&quot;5s&quot;,&quot;one-off&quot;: true}'
 
 {&quot;message&quot;:&quot;One-off healthcheck mcorbin-dns-check successfully executed&quot;}
 </code></pre><p><strong>Error example</strong>:</p>
-<pre><code>curl -H &quot;Content-Type: application/json&quot; 127.0.0.1:9013/healthcheck/dns -d '{&quot;name&quot;:&quot;mcorbin-dns-check&quot;,&quot;description&quot;:&quot;dns healthcheck example&quot;,&quot;domain&quot;:&quot;doesnotexist.mcorbin.fr&quot;,&quot;interval&quot;:&quot;5s&quot;,&quot;one-off&quot;: true}'
+<pre tabindex="0"><code>curl -H &quot;Content-Type: application/json&quot; 127.0.0.1:9013/healthcheck/dns -d '{&quot;name&quot;:&quot;mcorbin-dns-check&quot;,&quot;description&quot;:&quot;dns healthcheck example&quot;,&quot;domain&quot;:&quot;doesnotexist.mcorbin.fr&quot;,&quot;interval&quot;:&quot;5s&quot;,&quot;one-off&quot;: true}'
 
 {&quot;message&quot;:&quot;Execution of one off healthcheck mcorbin-dns-check failed: Fail to lookup IP for domain: lookup doesnotexist.mcorbin.fr on 192.168.43.1:53: no such host&quot;}
 </code></pre><h3 id="delete-a-healthcheck">Delete a healthcheck</h3>
@@ -793,7 +819,7 @@
 <li><strong>DELETE</strong> /healthcheck/<!-- raw HTML omitted --></li>
 </ul>
 <hr>
-<pre><code>curl -X DELETE 127.0.0.1:9013/healthcheck/mcorbin-dns-check
+<pre tabindex="0"><code>curl -X DELETE 127.0.0.1:9013/healthcheck/mcorbin-dns-check
 
 {&quot;message&quot;:&quot;Successfully deleted healthcheck mcorbin-dns-check&quot;}
 </code></pre><h3 id="list-healthchecks">List healthchecks</h3>
@@ -801,7 +827,7 @@
 <li><strong>GET</strong> /healthcheck</li>
 </ul>
 <hr>
-<pre><code>curl 127.0.0.1:9013/healthcheck
+<pre tabindex="0"><code>curl 127.0.0.1:9013/healthcheck
 
 [
   {
@@ -831,7 +857,7 @@
 <li><strong>GET</strong> /healthcheck/<!-- raw HTML omitted --></li>
 </ul>
 <hr>
-<pre><code>curl 127.0.0.1:9013/healthcheck/mcorbin-dns-check
+<pre tabindex="0"><code>curl 127.0.0.1:9013/healthcheck/mcorbin-dns-check
 
 {
   &quot;name&quot;: &quot;mcorbin-dns-check&quot;,
@@ -990,6 +1016,22 @@
                     
                     
 
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
                         
             
@@ -1187,19 +1229,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1639262182"></script>
-    <script src="/js/perfect-scrollbar.min.js?1639262182"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1639262182"></script>
-    <script src="/js/jquery.sticky.js?1639262182"></script>
-    <script src="/js/featherlight.min.js?1639262182"></script>
-    <script src="/js/highlight.pack.js?1639262182"></script>
+    <script src="/js/clipboard.min.js?1641413794"></script>
+    <script src="/js/perfect-scrollbar.min.js?1641413794"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1641413794"></script>
+    <script src="/js/jquery.sticky.js?1641413794"></script>
+    <script src="/js/featherlight.min.js?1641413794"></script>
+    <script src="/js/highlight.pack.js?1641413794"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1639262182"></script>
-    <script src="/js/learn.js?1639262182"></script>
-    <script src="/js/hugo-learn.js?1639262182"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1641413794"></script>
+    <script src="/js/learn.js?1641413794"></script>
+    <script src="/js/hugo-learn.js?1641413794"></script>
     
         
-            <script src="/mermaid/mermaid.js?1639262182"></script>
+            <script src="/mermaid/mermaid.js?1641413794"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

@@ -1,6 +1,6 @@
 ---
 title: Kubernetes
-weight: 1
+weight: 10
 ---
 
 The Kubernetes service discovery mechanisms allows Cabourotte to automatically configure itself based on Kubernetes pods and services annotations.

@@ -8,4 +8,4 @@ chapter: true
 
 ---
 
-Cabourotte is able to listen to external systems in order to configure itself. Currently, only Kubernetes is supported as a discovery source but more will come.
+Cabourotte is able to listen to external systems in order to configure itself. Cabourotte currently supports a generic HTTP discovery mechanism and Kubernetes (including a CRD).

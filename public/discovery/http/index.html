@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Categories :: Cabourotte verifies if your infrastructure is healthy</title>
+    <title>HTTP :: Cabourotte verifies if your infrastructure is healthy</title>
 
     
     <link href="/css/nucleus.css?1641413794" rel="stylesheet">
@@ -41,7 +41,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/categories/">
+  <body class="" data-url="/discovery/http/">
     <nav id="sidebar" class="">
 
 
@@ -261,7 +261,7 @@
   
     
     <li data-nav-id="/discovery/" title="Service Discovery" class="dd-item
-        
+        parent
         
         
         ">
@@ -290,8 +290,8 @@
   
     
     <li data-nav-id="/discovery/http/" title="HTTP" class="dd-item
-        
-        
+        parent
+        active
         
         ">
       <a href="/discovery/http/">
@@ -663,7 +663,13 @@
             
           
           
-            <a href='/'></a> > Categories
+            
+            
+          
+          
+            <a href='/'></a> > <a href='/discovery/'>Service Discovery</a> > HTTP
+          
+        
           
         
           
@@ -674,7 +680,7 @@
                 
                     <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents"></nav>
     </div>
 </div>
 
@@ -690,9 +696,7 @@
           
             <h1>
               
-                category ::
-              
-              Categories
+              HTTP
             </h1>
           
 
@@ -700,11 +704,39 @@
 
 
 
+	<p>When this mode is used Cabourotte will periodically poll and endpoint which should return all healthchecks which should be configured.</p>
+<p>The <a href="/installation/configuration/">configuration</a> section shows how to enable HTTP service discovery in the configuration file.</p>
+<p>The targeted HTTP server should return the healthchecks configurations as JSON. The fields are the same than the one in the YAML configuration file.</p>
+<p>If the HTTP server returns for example this content:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#f92672">&#34;tcp-checks&#34;</span>: [
+    {
+      <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;mcorbin-http-check&#34;</span>,
+      <span style="color:#f92672">&#34;description&#34;</span>: <span style="color:#e6db74">&#34;http healthcheck example&#34;</span>,
+      <span style="color:#f92672">&#34;target&#34;</span>: <span style="color:#e6db74">&#34;mcorbin.fr&#34;</span>,
+      <span style="color:#f92672">&#34;interval&#34;</span>: <span style="color:#e6db74">&#34;5s&#34;</span>,
+      <span style="color:#f92672">&#34;timeout&#34;</span>: <span style="color:#e6db74">&#34;3s&#34;</span>,
+      <span style="color:#f92672">&#34;port&#34;</span>: <span style="color:#ae81ff">443</span>,
+      <span style="color:#f92672">&#34;protocol&#34;</span>: <span style="color:#e6db74">&#34;https&#34;</span>,
+      <span style="color:#f92672">&#34;valid-status&#34;</span>: [
+        <span style="color:#ae81ff">200</span>
+      ]
+    }
+  ],
+  <span style="color:#f92672">&#34;dns-checks&#34;</span>: [
+    {
+      <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;mcorbin-dns-check&#34;</span>,
+      <span style="color:#f92672">&#34;description&#34;</span>: <span style="color:#e6db74">&#34;dns healthcheck example&#34;</span>,
+      <span style="color:#f92672">&#34;domain&#34;</span>: <span style="color:#e6db74">&#34;mcorbin.fr&#34;</span>,
+      <span style="color:#f92672">&#34;interval&#34;</span>: <span style="color:#e6db74">&#34;5s&#34;</span>
+    }
+  ]
+}
+</code></pre></div><p>Two healthchecks will be configured by Cabourotte.</p>
+<p>Remember that all expected healthchecks should be returned by the HTTP server. If an healthcheck is not returned anymore by it, it will be deleted from Cabourotte.</p>
 
 
-<ul>
-	
-</ul>
+
 
 
 <footer class=" footline" >
@@ -843,6 +875,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -857,6 +890,7 @@
             
             
                 
+                    
                     
                 
                 
@@ -873,6 +907,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1047,8 +1084,10 @@
 	 
 	 
 		
+			<a class="nav nav-prev" href="/discovery/" title="Service Discovery"> <i class="fa fa-chevron-left"></i></a>
 		
-			<a class="nav nav-next" href="/installation/" title="Installation" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+			<a class="nav nav-next" href="/discovery/kubernetes/" title="Kubernetes" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
