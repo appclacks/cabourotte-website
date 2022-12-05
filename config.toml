@@ -6,16 +6,11 @@ theme = "hugo-theme-learn"
 [params]
   themeVariant = "blue"
   disableInlineCopyToClipBoard = true
-[[menu.shortcuts]]
-name = "<i class='fab fa-github'></i> Github repo"
-identifier = "ds"
-url = "https://github.com/mcorbin/cabourotte"
-weight = 10
 
 [[menu.shortcuts]]
 name = "<i class='fab fa-github'></i> Github repo"
 identifier = "ds"
-url = "https://github.com/mcorbin/cabourotte"
+url = "https://github.com/appclacks/cabourotte"
 weight = 10
 
 [[menu.shortcuts]]
