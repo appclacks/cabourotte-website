@@ -22,7 +22,8 @@ curl 127.0.0.1:9013/result
       "name": "mcorbin-dns-check",
       "description": "dns healthcheck example",
       "domain": "mcorbin.fr",
-      "interval": "5s",
+      "interval": "10s",
+      "timeout": "5s",
       "one-off": false
     },
     "success": true,
@@ -62,7 +63,8 @@ curl 127.0.0.1:9013/result/mcorbin-dns-check
     "name": "mcorbin-dns-check",
     "description": "dns healthcheck example",
     "domain": "mcorbin.fr",
-    "interval": "5s",
+    "interval": "10s",
+    "timeout": "5s",
     "one-off": false
   },
   "success": true,

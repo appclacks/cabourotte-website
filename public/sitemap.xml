@@ -2,47 +2,45 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://cabourotte.mcorbin.fr/api/healthcheck/</loc>
+    <loc>https://www.cabourotte.appclacks.com/api/healthcheck/</loc>
   </url><url>
-    <loc>https://cabourotte.mcorbin.fr/community/how-to-contribute/</loc>
+    <loc>https://www.cabourotte.appclacks.com/community/how-to-contribute/</loc>
   </url><url>
-    <loc>https://cabourotte.mcorbin.fr/installation/</loc>
+    <loc>https://www.cabourotte.appclacks.com/installation/</loc>
   </url><url>
-    <loc>https://cabourotte.mcorbin.fr/api/result/</loc>
+    <loc>https://www.cabourotte.appclacks.com/api/result/</loc>
   </url><url>
-    <loc>https://cabourotte.mcorbin.fr/discovery/http/</loc>
+    <loc>https://www.cabourotte.appclacks.com/discovery/http/</loc>
   </url><url>
-    <loc>https://cabourotte.mcorbin.fr/discovery/kubernetes/</loc>
+    <loc>https://www.cabourotte.appclacks.com/community/support/</loc>
   </url><url>
-    <loc>https://cabourotte.mcorbin.fr/community/support/</loc>
+    <loc>https://www.cabourotte.appclacks.com/installation/get-cabourotte/</loc>
   </url><url>
-    <loc>https://cabourotte.mcorbin.fr/installation/get-cabourotte/</loc>
+    <loc>https://www.cabourotte.appclacks.com/exporters/http/</loc>
   </url><url>
-    <loc>https://cabourotte.mcorbin.fr/exporters/http/</loc>
+    <loc>https://www.cabourotte.appclacks.com/discovery/</loc>
   </url><url>
-    <loc>https://cabourotte.mcorbin.fr/discovery/</loc>
+    <loc>https://www.cabourotte.appclacks.com/installation/configuration/</loc>
   </url><url>
-    <loc>https://cabourotte.mcorbin.fr/installation/configuration/</loc>
+    <loc>https://www.cabourotte.appclacks.com/exporters/</loc>
   </url><url>
-    <loc>https://cabourotte.mcorbin.fr/exporters/</loc>
+    <loc>https://www.cabourotte.appclacks.com/installation/launch-it/</loc>
   </url><url>
-    <loc>https://cabourotte.mcorbin.fr/installation/launch-it/</loc>
+    <loc>https://www.cabourotte.appclacks.com/exporters/riemann/</loc>
   </url><url>
-    <loc>https://cabourotte.mcorbin.fr/exporters/riemann/</loc>
+    <loc>https://www.cabourotte.appclacks.com/installation/monitoring/</loc>
   </url><url>
-    <loc>https://cabourotte.mcorbin.fr/installation/monitoring/</loc>
+    <loc>https://www.cabourotte.appclacks.com/api/</loc>
   </url><url>
-    <loc>https://cabourotte.mcorbin.fr/api/</loc>
+    <loc>https://www.cabourotte.appclacks.com/installation/frontend/</loc>
   </url><url>
-    <loc>https://cabourotte.mcorbin.fr/installation/frontend/</loc>
+    <loc>https://www.cabourotte.appclacks.com/community/</loc>
   </url><url>
-    <loc>https://cabourotte.mcorbin.fr/community/</loc>
-  </url><url>
-    <loc>https://cabourotte.mcorbin.fr/</loc>
+    <loc>https://www.cabourotte.appclacks.com/</loc>
     <priority>0</priority>
   </url><url>
-    <loc>https://cabourotte.mcorbin.fr/categories/</loc>
+    <loc>https://www.cabourotte.appclacks.com/categories/</loc>
   </url><url>
-    <loc>https://cabourotte.mcorbin.fr/tags/</loc>
+    <loc>https://www.cabourotte.appclacks.com/tags/</loc>
   </url>
 </urlset>

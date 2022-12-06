@@ -41,7 +41,9 @@ dns-checks:
     # The healthcheck domain
     domain: "mcorbin.fr"
     # The healthcheck interval
-    interval: 5s
+    interval: 10s
+    # The healthcheck timeout
+    timeout: 5s
     # A list of IPs (v4 or v6) which will be compared to the
     # DNS lookup results. The healthcheck will fail if the IPs defined
     # in this list are not returned
@@ -222,38 +224,6 @@ exporters:
 # For more information about service discovery and how to use it,
 # please check the dedicated section in the documentation
 discovery:
-  # Enabled Kubernetes service discovery (optional)
-  kubernetes:
-      # Enable Kubernetes pod discovery
-      pod:
-        # Only pods with these labels will be discovered (optional)
-        labels:
-          foo: "bar"
-        # Enable Kubernetes pod discovery
-        enabled: true
-        # Only discover pods in this namespace (optional)
-        namespace: "default"
-      # Enable Kubernetes service discovery
-      service:
-        # Only services with these labels will be discovered (optional)
-        labels:
-          foo: "bar"
-        # Enable Kubernetes service discovery
-        enabled: true
-        # Only discover services in this namespace (optional)
-        namespace: "default"
-      # Enable Kubernetes Healthcheck CRD discovery
-      crd:
-        # Only CRD with these labels will be discovered (optional)
-        labels:
-          foo: "bar"
-        # Enable Kubernetes CRD discovery
-        enabled: true
-        # Only discover CRD in this namespace (optional)
-        namespace: "default"
-      # Disable commands checks. Trying to create commands checks using
-      # Kubernetes will fail
-      disable-commands-checks: true
   # Enable HTTP discovery
     http:
       # The interval between the polls (minimum 10s)
@@ -266,6 +236,12 @@ discovery:
       path: "/"
       # The target protocol (http or https)
       protocol: "http"
+      # query parameters
+      query:
+        param: "value"
+      # headers
+      headers:
+        Authorization: "Basic dXNlcjpwYXNzd29yZA=="
       # A cacert for mTLS (optional)
       cacert: "/tmp/cacert.pem"
       # A cert for mTLS (optional)

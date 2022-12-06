@@ -8,4 +8,4 @@ chapter: true
 
 ---
 
-Cabourotte is able to listen to external systems in order to configure itself. Cabourotte currently supports a generic HTTP discovery mechanism and Kubernetes (including a CRD).
+Cabourotte is able to listen to external systems in order to configure itself. Cabourotte currently supports a generic HTTP discovery mechanism.

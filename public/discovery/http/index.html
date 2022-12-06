@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.91.2" />
+    <meta name="generator" content="Hugo 0.107.0">
     <meta name="description" content="">
 
 
@@ -12,22 +12,22 @@
     <title>HTTP :: Cabourotte verifies if your infrastructure is healthy</title>
 
     
-    <link href="/css/nucleus.css?1646564308" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1646564308" rel="stylesheet">
-    <link href="/css/hybrid.css?1646564308" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1646564308" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1646564308" rel="stylesheet">
-    <link href="/css/auto-complete.css?1646564308" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1646564308" rel="stylesheet">
-    <link href="/css/theme.css?1646564308" rel="stylesheet">
-    <link href="/css/tabs.css?1646564308" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1646564308" rel="stylesheet">
+    <link href="/css/nucleus.css?1670367672" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1670367672" rel="stylesheet">
+    <link href="/css/hybrid.css?1670367672" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1670367672" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1670367672" rel="stylesheet">
+    <link href="/css/auto-complete.css?1670367672" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1670367672" rel="stylesheet">
+    <link href="/css/theme.css?1670367672" rel="stylesheet">
+    <link href="/css/tabs.css?1670367672" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1670367672" rel="stylesheet">
     
-    <link href="/css/theme-blue.css?1646564308" rel="stylesheet">
+    <link href="/css/theme-blue.css?1670367672" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1646564308"></script>
+    <script src="/js/jquery-3.3.1.min.js?1670367672"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -48,7 +48,7 @@
 
   <div id="header-wrapper">
     <div id="header">
-      <a id="logo" href="https://cabourotte.mcorbin.fr">
+      <a id="logo" href="https://www.cabourotte.appclacks.com">
   <h2>Cabourotte</p>
 </a>
 
@@ -60,14 +60,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1646564308"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1646564308"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1670367672"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1670367672"></script>
 <script type="text/javascript">
     
-        var baseurl = "https:\/\/cabourotte.mcorbin.fr";
+        var baseurl = "https:\/\/www.cabourotte.appclacks.com";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1646564308"></script>
+<script type="text/javascript" src="/js/search.js?1670367672"></script>
 
     
   </div>
@@ -290,38 +290,12 @@
   
     
     <li data-nav-id="/discovery/http/" title="HTTP" class="dd-item
-        parent
+        
         active
         
         ">
       <a href="/discovery/http/">
           HTTP
-          
-      </a>
-      
-      
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/discovery/kubernetes/" title="Kubernetes" class="dd-item
-        
-        
-        
-        ">
-      <a href="/discovery/kubernetes/">
-          Kubernetes
           
       </a>
       
@@ -614,7 +588,7 @@
         <ul>
           
               <li>
-                  <a class="padding" href="https://github.com/mcorbin/cabourotte"><i class='fab fa-github'></i> Github repo</a>
+                  <a class="padding" href="https://github.com/appclacks/cabourotte"><i class='fab fa-github'></i> Github repo</a>
               </li>
           
               <li>
@@ -708,31 +682,31 @@
 <p>The <a href="/installation/configuration/">configuration</a> section shows how to enable HTTP service discovery in the configuration file.</p>
 <p>The targeted HTTP server should return the healthchecks configurations as JSON. The fields are the same than the one in the YAML configuration file.</p>
 <p>If the HTTP server returns for example this content:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-  <span style="color:#f92672">&#34;tcp-checks&#34;</span>: [
-    {
-      <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;mcorbin-http-check&#34;</span>,
-      <span style="color:#f92672">&#34;description&#34;</span>: <span style="color:#e6db74">&#34;http healthcheck example&#34;</span>,
-      <span style="color:#f92672">&#34;target&#34;</span>: <span style="color:#e6db74">&#34;mcorbin.fr&#34;</span>,
-      <span style="color:#f92672">&#34;interval&#34;</span>: <span style="color:#e6db74">&#34;5s&#34;</span>,
-      <span style="color:#f92672">&#34;timeout&#34;</span>: <span style="color:#e6db74">&#34;3s&#34;</span>,
-      <span style="color:#f92672">&#34;port&#34;</span>: <span style="color:#ae81ff">443</span>,
-      <span style="color:#f92672">&#34;protocol&#34;</span>: <span style="color:#e6db74">&#34;https&#34;</span>,
-      <span style="color:#f92672">&#34;valid-status&#34;</span>: [
-        <span style="color:#ae81ff">200</span>
-      ]
-    }
-  ],
-  <span style="color:#f92672">&#34;dns-checks&#34;</span>: [
-    {
-      <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;mcorbin-dns-check&#34;</span>,
-      <span style="color:#f92672">&#34;description&#34;</span>: <span style="color:#e6db74">&#34;dns healthcheck example&#34;</span>,
-      <span style="color:#f92672">&#34;domain&#34;</span>: <span style="color:#e6db74">&#34;mcorbin.fr&#34;</span>,
-      <span style="color:#f92672">&#34;interval&#34;</span>: <span style="color:#e6db74">&#34;5s&#34;</span>
-    }
-  ]
-}
-</code></pre></div><p>Two healthchecks will be configured by Cabourotte.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;tcp-checks&#34;</span>: [
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;mcorbin-http-check&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;description&#34;</span>: <span style="color:#e6db74">&#34;http healthcheck example&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;target&#34;</span>: <span style="color:#e6db74">&#34;mcorbin.fr&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;interval&#34;</span>: <span style="color:#e6db74">&#34;5s&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;timeout&#34;</span>: <span style="color:#e6db74">&#34;3s&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;port&#34;</span>: <span style="color:#ae81ff">443</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;protocol&#34;</span>: <span style="color:#e6db74">&#34;https&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;valid-status&#34;</span>: [
+</span></span><span style="display:flex;"><span>        <span style="color:#ae81ff">200</span>
+</span></span><span style="display:flex;"><span>      ]
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  ],
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;dns-checks&#34;</span>: [
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;mcorbin-dns-check&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;description&#34;</span>: <span style="color:#e6db74">&#34;dns healthcheck example&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;domain&#34;</span>: <span style="color:#e6db74">&#34;mcorbin.fr&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;interval&#34;</span>: <span style="color:#e6db74">&#34;5s&#34;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  ]
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Two healthchecks will be configured by Cabourotte.</p>
 <p>Remember that all expected healthchecks should be returned by the HTTP server. If an healthcheck is not returned anymore by it, it will be deleted from Cabourotte.</p>
 
 
@@ -903,25 +877,6 @@
             
         
                     
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
             
         
                     
@@ -929,6 +884,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1087,7 +1045,7 @@
 			<a class="nav nav-prev" href="/discovery/" title="Service Discovery"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/discovery/kubernetes/" title="Kubernetes" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/exporters/" title="Exporters" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -1097,19 +1055,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1646564308"></script>
-    <script src="/js/perfect-scrollbar.min.js?1646564308"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1646564308"></script>
-    <script src="/js/jquery.sticky.js?1646564308"></script>
-    <script src="/js/featherlight.min.js?1646564308"></script>
-    <script src="/js/highlight.pack.js?1646564308"></script>
+    <script src="/js/clipboard.min.js?1670367672"></script>
+    <script src="/js/perfect-scrollbar.min.js?1670367672"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1670367672"></script>
+    <script src="/js/jquery.sticky.js?1670367672"></script>
+    <script src="/js/featherlight.min.js?1670367672"></script>
+    <script src="/js/highlight.pack.js?1670367672"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1646564308"></script>
-    <script src="/js/learn.js?1646564308"></script>
-    <script src="/js/hugo-learn.js?1646564308"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1670367672"></script>
+    <script src="/js/learn.js?1670367672"></script>
+    <script src="/js/hugo-learn.js?1670367672"></script>
     
         
-            <script src="/mermaid/mermaid.js?1646564308"></script>
+            <script src="/mermaid/mermaid.js?1670367672"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

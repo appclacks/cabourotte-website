@@ -1,4 +1,4 @@
-baseURL = "https://cabourotte.mcorbin.fr"
+baseURL = "https://www.cabourotte.appclacks.com"
 languageCode = "en-us"
 title = "Cabourotte verifies if your infrastructure is healthy"
 theme = "hugo-theme-learn"

@@ -46,7 +46,7 @@ curl -H "Content-Type: application/json" 127.0.0.1:9013/healthcheck/tcp -d '{"na
 ---
 
 ```
-curl -H "Content-Type: application/json" 127.0.0.1:9013/healthcheck/dns -d '{"name":"mcorbin-dns-check","description":"dns healthcheck example","domain":"mcorbin.fr","interval":"5s"}'
+curl -H "Content-Type: application/json" 127.0.0.1:9013/healthcheck/dns -d '{"name":"mcorbin-dns-check","description":"dns healthcheck example","domain":"mcorbin.fr","interval":"10s", "timeout":"5s"}'
 
 {"message":"Healthcheck successfully added"}
 ```
@@ -165,7 +165,8 @@ curl 127.0.0.1:9013/healthcheck
     "name": "mcorbin-dns-check",
     "description": "dns healthcheck example",
     "domain": "mcorbin.fr",
-    "interval": "5s",
+    "interval": "10s",
+    "timeout": "5s",
     "one-off": false
   },
   {
@@ -198,7 +199,8 @@ curl 127.0.0.1:9013/healthcheck/mcorbin-dns-check
   "name": "mcorbin-dns-check",
   "description": "dns healthcheck example",
   "domain": "mcorbin.fr",
-  "interval": "5s",
+  "timeout": "5s",
+  "interval": "10s",
   "one-off": false
 }
 ```
