@@ -1,5 +1,8 @@
 # Cabourotte, a monitoring tool to execute healthchecks on your infrastructure
 
+Cabourotte is a tool that can be configure to execute health checks on your infrastructure. +
+It's the tool used to execute health checks on the [Appclacks Clous platform](https://appclacks.com/). It's a free software that you can also install on your private infrastructure.
+
 IT infrastructures are complex. We have more and more equipments, machines, and services to manage. Infrastructures are also more dynamic, with services which can be scaled up and down depending on usage.
 
 The rise of containers orchestrators also made networking more complex. On a network failure, a service could be reachable from one part of your infrastructure but not from another one.
