@@ -27,6 +27,11 @@ Here are some interesting metrics exposed:
 - `http_requests_duration_second_count`: The number of HTTP requests. Labels are the same than the previous metric.
 - `http_responses_total`: A counter for HTTP responses Labels are `method`, `path` and also `status`, which is the response HTTP status.
 
+**Discovery**
+
+- `http_discovery_duration_seconds_bucket`: The duration of HTTP discovery requests, as a Prometheus histogram
+- `http_discovery_responses_total`: A counter counting the number of HTTP discovery responses. It provides a `status` label (`success` or `failure`).
+
 **Go metrics**
 
 Metrics prefixed by `go` are golang internal metrics.
