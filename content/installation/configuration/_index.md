@@ -225,31 +225,34 @@ exporters:
 # please check the dedicated section in the documentation
 discovery:
   # Enable HTTP discovery
+  # Multiple targets can be configured in the http key
     http:
-      # The interval between the polls (minimum 10s)
-      interval: 10s
-      # The target host
-      host: "127.0.0.1"
-      # The target port
-      port: 9595
-      # The target path
-      path: "/"
-      # The target protocol (http or https)
-      protocol: "http"
-      # query parameters
-      query:
-        param: "value"
-      # headers
-      headers:
-        Authorization: "Basic dXNlcjpwYXNzd29yZA=="
-      # A cacert for mTLS (optional)
-      cacert: "/tmp/cacert.pem"
-      # A cert for mTLS (optional)
-      cert: "/tmp/cert.pem"
-      # A key for mTLS (optional)
-      key: "/tmp/foo.key"
-      # Enable or disable insecure TLS connections (default to false)
-      insecure: false
+        # An unique name for the discovery source
+      - name: "http-discorery"
+        # The interval between the polls (minimum 10s)
+        interval: 10s
+        # The target host
+        host: "127.0.0.1"
+        # The target port
+        port: 9595
+        # The target path
+        path: "/"
+        # The target protocol (http or https)
+        protocol: "http"
+        # query parameters
+        query:
+          param: "value"
+        # headers
+        headers:
+          Authorization: "Basic dXNlcjpwYXNzd29yZA=="
+        # A cacert for mTLS (optional)
+        cacert: "/tmp/cacert.pem"
+        # A cert for mTLS (optional)
+        cert: "/tmp/cert.pem"
+        # A key for mTLS (optional)
+        key: "/tmp/foo.key"
+        # Enable or disable insecure TLS connections (default to false)
+        insecure: false
 ```
 
 healthchecks names should be unique (you cannot have 2 healthchecks configured with the same name). Same for exporters.
