@@ -6,7 +6,7 @@ disableToc: false
 
 ## With the binary
 
-Releases are available [on Github](https://github.com/appclacks/cabourotte/releases/tag/v1.7.0).
+Releases are available [on Github](https://github.com/appclacks/cabourotte/releases).
 
 You can launch the daemon with the command `cabourotte daemon --config <path_to_yaml_config>`.
 
@@ -33,5 +33,5 @@ EOF
 Then, launch Docker and mount this configuration file on the container:
 
 ```
-docker run -p 9013:9013 -v /tmp/cabourotte.yaml:/cabourotte.yaml mcorbin/cabourotte:v1.10.0
+docker run -p 9013:9013 -v /tmp/cabourotte.yaml:/cabourotte.yaml mcorbin/cabourotte:v1.11.0
 ```
