@@ -82,6 +82,9 @@ http-checks:
     # Extra headers to add to the request (optional)
     headers:
       foo: "bar"
+    # HTTP query parameters
+    query:
+      param1: "value"
     # Body to pass to the request (optional)
     body: "my request body"
     # A list of regular expression. The response body should match them (optional)
