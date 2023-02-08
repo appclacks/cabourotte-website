@@ -18,8 +18,8 @@ Here are some interesting metrics exposed:
 
 **healthchecks**
 
-- `healthcheck_duration_seconds_bucket`: The duration for the healthchecks executions. Labels are `status`, which indicates if the healthchecks were successful or not, and `name` which is the healthcheck name.
-- `healthcheck_duration_seconds_count`: The number of execution for each healthchecks. Labels are the same than the previous metric.
+- `healthcheck_duration_seconds_bucket`: The duration for the healthchecks executions. This metric has a `name` label which is the healthcheck name.
+- `healthcheck_duration_seconds_count`: The number of execution for each healthchecks. It also have a `name` label.
 
 **API**
 
