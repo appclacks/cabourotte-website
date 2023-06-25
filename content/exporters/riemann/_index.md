@@ -15,6 +15,7 @@ Exporters should be configured in the YAML configuration file. You can see how t
 The event will have several fields set:
 
 - host: The hostname of the machine where Cabourotte is running.
+- metric: the health check execution time in milliseconds.
 - service: The valie will be "cabourotte-healthcheck".
 - description: A summary of the healthcheck and a message explaining the healthcheck result.
 - time: The healthcheck execution timestamp.
