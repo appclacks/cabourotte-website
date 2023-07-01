@@ -104,6 +104,8 @@ http-checks:
     # exporters (optional)
     labels:
       environment: prod
+    # Override the HTTP request host header
+    host: "appclacks.com"
 # The tcp-checks section can be used to configure HTTP healthchecks
 tcp-checks:
     # The healthcheck name
