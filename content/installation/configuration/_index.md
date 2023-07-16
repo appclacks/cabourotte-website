@@ -98,6 +98,8 @@ http-checks:
     key: "/tmp/foo.key"
     # Enable or disable insecure TLS connections (default to false)
     insecure: false
+    # The SNI which will be used by the healthcheck (optional, default to the target value)
+    server-name: example.com
     # The source IP which will be used for healthchecks (optional)
     source-ip: "10.1.1.2"
     # Labels for this healthcheck. It will be used in logging and in
