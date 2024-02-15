@@ -136,7 +136,7 @@ tls-checks:
     # The healthcheck name
   - name: "mcorbin-tls-check"
     # The healthcheck description
-    description: "tcp healthcheck example"
+    description: "tls healthcheck example"
     # The healthcheck target. It can be an IP (v4 or v6) or a domain
     target: "mcorbin.fr"
     # The target port
