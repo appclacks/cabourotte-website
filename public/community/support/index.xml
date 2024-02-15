@@ -5,6 +5,7 @@
     <link>https://www.cabourotte.appclacks.com/community/support/</link>
     <description>Recent content in Support on Cabourotte verifies if your infrastructure is healthy</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://www.cabourotte.appclacks.com/community/support/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <atom:link href="https://www.cabourotte.appclacks.com/community/support/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
