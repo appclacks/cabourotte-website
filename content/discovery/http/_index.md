@@ -41,3 +41,5 @@ If the HTTP server returns for example this content:
 Two healthchecks will be configured by Cabourotte.
 
 Remember that all expected healthchecks should be returned by the HTTP server. If an healthcheck is not returned anymore by it, it will be deleted from Cabourotte.
+
+See the [Appclacks server documentation](https://doc.appclacks.com/healthcheck/cabourotte/index.html) for an integration example.

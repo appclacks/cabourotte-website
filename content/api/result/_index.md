@@ -13,19 +13,20 @@ The **latest** result for each healthcheck can be retrieved through the API.
 ---
 
 ```
-curl 127.0.0.1:9013/result
+curl 127.0.0.1:9013/api/v1/result
 
-[
-  {
-    "name": "dns-check",
-    "summary": "DNS healthcheck example on appclacks.com",
-    "success": true,
-    "healthcheck-timestamp": 1687724429,
-    "message": "success",
-    "duration": 35,
-    "source": "configuration"
-  }
-]
+{"result": [
+    {
+      "name": "dns-check",
+      "summary": "DNS healthcheck example on appclacks.com",
+      "success": true,
+      "healthcheck-timestamp": 1687724429,
+      "message": "success",
+      "duration": 35,
+      "source": "configuration"
+    }
+  ]
+}
 ```
 
 ### Get result for a specific healthcheck
@@ -35,7 +36,7 @@ curl 127.0.0.1:9013/result
 ---
 
 ```
-curl 127.0.0.1:9013/result/dns-check
+curl 127.0.0.1:9013/api/v1/result/dns-check
 
 {
   "name": "dns-check",

@@ -33,5 +33,5 @@ EOF
 Then, launch Docker and mount this configuration file on the container:
 
 ```
-docker run -p 9013:9013 -v /tmp/cabourotte.yaml:/cabourotte.yaml appclacks/cabourotte:v1.19.0
+docker run -p 9013:9013 -v /tmp/cabourotte.yaml:/cabourotte.yaml appclacks/cabourotte:v2.0.0
 ```

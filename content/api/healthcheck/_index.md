@@ -21,7 +21,7 @@ A bulk endpoint allows you to configure all healthchecks in one API call.
 ---
 
 ```
-curl -H "Content-Type: application/json" 127.0.0.1:9013/healthcheck/http -d '{"name":"mcorbin-http-check","description":"http healthcheck example","target":"mcorbin.fr","interval":"5s","timeout": "3s","port":443,"protocol":"https","valid-status":[200]}'
+curl -H "Content-Type: application/json" 127.0.0.1:9013/api/v1/healthcheck/http -d '{"name":"mcorbin-http-check","description":"http healthcheck example","target":"mcorbin.fr","interval":"5s","timeout": "3s","port":443,"protocol":"https","valid-status":[200]}'
 
 {"message":"Healthcheck successfully added"}
 ```
@@ -33,7 +33,7 @@ curl -H "Content-Type: application/json" 127.0.0.1:9013/healthcheck/http -d '{"n
 ---
 
 ```
-curl -H "Content-Type: application/json" 127.0.0.1:9013/healthcheck/tcp -d '{"name":"mcorbin-tcp-check","description":"http healthcheck example","target":"mcorbin.fr","interval":"5s","timeout": "3s","port":443}'
+curl -H "Content-Type: application/json" 127.0.0.1:9013/api/v1/healthcheck/tcp -d '{"name":"mcorbin-tcp-check","description":"http healthcheck example","target":"mcorbin.fr","interval":"5s","timeout": "3s","port":443}'
 
 {"message":"Healthcheck successfully added"}
 
@@ -46,7 +46,7 @@ curl -H "Content-Type: application/json" 127.0.0.1:9013/healthcheck/tcp -d '{"na
 ---
 
 ```
-curl -H "Content-Type: application/json" 127.0.0.1:9013/healthcheck/dns -d '{"name":"mcorbin-dns-check","description":"dns healthcheck example","domain":"mcorbin.fr","interval":"10s", "timeout":"5s"}'
+curl -H "Content-Type: application/json" 127.0.0.1:9013/api/v1/healthcheck/dns -d '{"name":"mcorbin-dns-check","description":"dns healthcheck example","domain":"mcorbin.fr","interval":"10s", "timeout":"5s"}'
 
 {"message":"Healthcheck successfully added"}
 ```
@@ -58,7 +58,7 @@ curl -H "Content-Type: application/json" 127.0.0.1:9013/healthcheck/dns -d '{"na
 ---
 
 ```
-curl -H "Content-Type: application/json" 127.0.0.1:9013/healthcheck/tls -d '{"name":"mcorbin-tls-check","description":"tls healthcheck example","target":"mcorbin.fr","interval":"5s","timeout": "3s","port":443, "expiration-delay": "48h"}'
+curl -H "Content-Type: application/json" 127.0.0.1:9013/api/v1/healthcheck/tls -d '{"name":"mcorbin-tls-check","description":"tls healthcheck example","target":"mcorbin.fr","interval":"5s","timeout": "3s","port":443, "expiration-delay": "48h"}'
 
 {"message":"Healthcheck successfully added"}
 ```
@@ -70,7 +70,7 @@ curl -H "Content-Type: application/json" 127.0.0.1:9013/healthcheck/tls -d '{"na
 ---
 
 ```
-curl -H "Content-Type: application/json" 127.0.0.1:9013/healthcheck/command -d '{"name":"mcorbin-command-check","description":"command healthcheck example","command":"ls", "arguments": ["-l", "/"], "interval":"5s","timeout": "3s"}'
+curl -H "Content-Type: application/json" 127.0.0.1:9013/api/v1/healthcheck/command -d '{"name":"mcorbin-command-check","description":"command healthcheck example","command":"ls", "arguments": ["-l", "/"], "interval":"5s","timeout": "3s"}'
 
 {"message":"Healthcheck successfully added"}
 ```
@@ -86,7 +86,7 @@ Existing healthchecks created using the API will be replaced or removed if not s
 ---
 
 ```
-curl -H "Content-Type: application/json" 127.0.0.1:9013/healthcheck/bulk -d '
+curl -H "Content-Type: application/json" 127.0.0.1:9013/api/v1/healthcheck/bulk -d '
 {
   "tls-checks": [
     {
@@ -126,7 +126,7 @@ As explained before, the `one-off` parameter can be set to `true` in the payload
 **Success example**:
 
 ```
-curl -H "Content-Type: application/json" 127.0.0.1:9013/healthcheck/dns -d '{"name":"mcorbin-dns-check","description":"dns healthcheck example","domain":"mcorbin.fr","interval":"5s","one-off": true}'
+curl -H "Content-Type: application/json" 127.0.0.1:9013/api/v1/healthcheck/dns -d '{"name":"mcorbin-dns-check","description":"dns healthcheck example","domain":"mcorbin.fr","timeout":"5s","one-off": true}'
 
 {"message":"One-off healthcheck mcorbin-dns-check successfully executed"}
 ```
@@ -134,7 +134,7 @@ curl -H "Content-Type: application/json" 127.0.0.1:9013/healthcheck/dns -d '{"na
 **Error example**:
 
 ```
-curl -H "Content-Type: application/json" 127.0.0.1:9013/healthcheck/dns -d '{"name":"mcorbin-dns-check","description":"dns healthcheck example","domain":"doesnotexist.mcorbin.fr","interval":"5s","one-off": true}'
+curl -H "Content-Type: application/json" 127.0.0.1:9013/api/v1/healthcheck/dns -d '{"name":"mcorbin-dns-check","description":"dns healthcheck example","domain":"doesnotexist.mcorbin.fr","timeout":"5s","one-off": true}'
 
 {"message":"Execution of one off healthcheck mcorbin-dns-check failed: Fail to lookup IP for domain: lookup doesnotexist.mcorbin.fr on 192.168.43.1:53: no such host"}
 ```
@@ -146,7 +146,7 @@ curl -H "Content-Type: application/json" 127.0.0.1:9013/healthcheck/dns -d '{"na
 ---
 
 ```
-curl -X DELETE 127.0.0.1:9013/healthcheck/mcorbin-dns-check
+curl -X DELETE 127.0.0.1:9013/api/v1/healthcheck/mcorbin-dns-check
 
 {"message":"Successfully deleted healthcheck mcorbin-dns-check"}
 ```
@@ -158,32 +158,33 @@ curl -X DELETE 127.0.0.1:9013/healthcheck/mcorbin-dns-check
 ---
 
 ```
-curl 127.0.0.1:9013/healthcheck
+curl 127.0.0.1:9013/api/v1/healthcheck
 
-[
-  {
-    "name": "mcorbin-dns-check",
-    "description": "dns healthcheck example",
-    "domain": "mcorbin.fr",
-    "interval": "10s",
-    "timeout": "5s",
-    "one-off": false
-  },
-  {
-    "name": "mcorbin-http-check",
-    "valid-status": [
-      200
-    ],
-    "description": "http healthcheck example",
-    "target": "mcorbin.fr",
-    "port": 443,
-    "redirect": false,
-    "protocol": "https",
-    "timeout": "3s",
-    "interval": "5s",
-    "one-off": false
-  }
-]
+{"result": [
+    {
+      "name": "mcorbin-dns-check",
+      "description": "dns healthcheck example",
+      "domain": "mcorbin.fr",
+      "interval": "10s",
+      "timeout": "5s",
+      "one-off": false
+    },
+    {
+      "name": "mcorbin-http-check",
+      "valid-status": [
+        200
+      ],
+      "description": "http healthcheck example",
+      "target": "mcorbin.fr",
+      "port": 443,
+      "redirect": false,
+      "protocol": "https",
+      "timeout": "3s",
+      "interval": "5s",
+      "one-off": false
+    }
+  ]
+}
 ```
 
 ### Get a healthcheck
@@ -193,7 +194,7 @@ curl 127.0.0.1:9013/healthcheck
 ---
 
 ```
-curl 127.0.0.1:9013/healthcheck/mcorbin-dns-check
+curl 127.0.0.1:9013/api/v1/healthcheck/mcorbin-dns-check
 
 {
   "name": "mcorbin-dns-check",
