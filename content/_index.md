@@ -14,6 +14,7 @@ Cabourotte is a tool which allow you to execute healthchecks (HTTP(s), TCP, DNS,
 - Configurable by using a YAML file, or by using the API. Using the API allows you to dynamically add, update, or remove healthchecks definitions. The API also allows you to list configured healthchecks and to get the latest status for each healthcheck.
 - HTTP service discovery: You can easily integration Cabourotte with anything you want.
 - Prometheus integration: the healthchecks results and executions time are exposed on a Prometheus endpoint alongside various internal metrics.
+- Opentelemetry traces support.
 - Support exporters, which can be configured to push the healthchecks results to another systems.
 - `One-Off` healthchecks: You can send requests to the API to execute arbitrary healthchecks and get the healthchecks results in the responses.
 - Hot reload on a SIGHUP.

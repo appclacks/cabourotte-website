@@ -8,6 +8,8 @@ disableToc: false
 
 Cabourotte is configured through a YAML file (althought healthchecks can be dynamically configured using the API).
 
+Cabourotte also supports standard Opentelemetry traces variables to configure tracing.
+
 Here is a commented example of a Cabourotte configuration:
 
 ```yaml

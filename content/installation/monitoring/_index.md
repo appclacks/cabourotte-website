@@ -36,6 +36,10 @@ Here are some interesting metrics exposed:
 
 Metrics prefixed by `go` are golang internal metrics.
 
+## Tracing
+
+You can enable [Opentelemetry traces](https://opentelemetry.io/docs/concepts/signals/traces/). You can for example use the `OTEL_EXPORTER_OTLP_TRACES_ENDPOINT` to configure the endpoint. See the [environment variable list](https://opentelemetry.io/docs/specs/otel/configuration/sdk-environment-variables/) in the Opentelemetry documentation.
+
 ## Health endpoints
 
 Cabourotte provides the `/health` and `/healthz` endpoints. You can use them to check if Cabourotte is started or not.
